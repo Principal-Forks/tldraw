@@ -1,0 +1,781 @@
+{
+  "vv": {
+    "name": "tlschema Architecture",
+    "version": "1.0.0",
+    "nodeTypes": {
+      "CoreModule": {
+        "description": "Core schema module",
+        "color": 4,
+        "icon": "Package"
+      },
+      "RecordType": {
+        "description": "Record type definition",
+        "color": 5,
+        "icon": "Database"
+      },
+      "ShapeType": {
+        "description": "Shape implementation",
+        "color": 2,
+        "icon": "Square"
+      },
+      "AssetType": {
+        "description": "Asset type",
+        "color": 3,
+        "icon": "Image"
+      },
+      "SupportSystem": {
+        "description": "Support system",
+        "color": 6,
+        "icon": "Settings"
+      }
+    },
+    "edgeTypes": {
+      "Contains": {
+        "description": "Contains relationship",
+        "style": "solid",
+        "label": "contains"
+      },
+      "Uses": {
+        "description": "Uses relationship",
+        "style": "dashed",
+        "label": "uses"
+      },
+      "Extends": {
+        "description": "Extends relationship",
+        "style": "dotted",
+        "label": "extends"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "tlstore",
+      "type": "geo",
+      "x": 299,
+      "y": -628,
+      "width": 200,
+      "height": 100,
+      "label": "TLStore",
+      "color": 4,
+      "vv": {
+        "nodeType": "CoreModule",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "createTLSchema",
+      "type": "geo",
+      "x": -106,
+      "y": -628,
+      "width": 200,
+      "height": 100,
+      "label": "createTLSchema",
+      "color": 4,
+      "vv": {
+        "nodeType": "CoreModule",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "tlrecord",
+      "type": "geo",
+      "x": 108,
+      "y": -421,
+      "width": 200,
+      "height": 100,
+      "label": "TLRecord (union)",
+      "color": 4,
+      "vv": {
+        "nodeType": "CoreModule",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "tldocument",
+      "type": "geo",
+      "x": -776,
+      "y": -136,
+      "width": 150,
+      "height": 80,
+      "label": "TLDocument",
+      "color": 5,
+      "vv": {
+        "nodeType": "RecordType",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "tlpage",
+      "type": "geo",
+      "x": -567,
+      "y": -136,
+      "width": 150,
+      "height": 80,
+      "label": "TLPage",
+      "color": 5,
+      "vv": {
+        "nodeType": "RecordType",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "tlshape",
+      "type": "geo",
+      "x": 432,
+      "y": -128,
+      "width": 150,
+      "height": 80,
+      "label": "TLShape",
+      "color": 5,
+      "vv": {
+        "nodeType": "RecordType",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "tlasset",
+      "type": "geo",
+      "x": 1021,
+      "y": -124,
+      "width": 150,
+      "height": 80,
+      "label": "TLAsset",
+      "color": 5,
+      "vv": {
+        "nodeType": "RecordType",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "tlbinding",
+      "type": "geo",
+      "x": 1280,
+      "y": -122,
+      "width": 150,
+      "height": 80,
+      "label": "TLBinding",
+      "color": 5,
+      "vv": {
+        "nodeType": "RecordType",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "tlinstance",
+      "type": "geo",
+      "x": 1528,
+      "y": -117,
+      "width": 150,
+      "height": 80,
+      "label": "TLInstance",
+      "color": 5,
+      "vv": {
+        "nodeType": "RecordType",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "tlcamera",
+      "type": "geo",
+      "x": -365,
+      "y": -135,
+      "width": 150,
+      "height": 80,
+      "label": "TLCamera",
+      "color": 5,
+      "vv": {
+        "nodeType": "RecordType",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "tlpresence",
+      "type": "geo",
+      "x": -164,
+      "y": -131,
+      "width": 150,
+      "height": 80,
+      "label": "TLPresence",
+      "color": 5,
+      "vv": {
+        "nodeType": "RecordType",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "tlpointer",
+      "type": "geo",
+      "x": 228,
+      "y": -130,
+      "width": 150,
+      "height": 80,
+      "label": "TLPointer",
+      "color": 5,
+      "vv": {
+        "nodeType": "RecordType",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "geo-shape",
+      "type": "geo",
+      "x": -50,
+      "y": 180,
+      "width": 120,
+      "height": 60,
+      "label": "Geo",
+      "color": 2,
+      "vv": {
+        "nodeType": "ShapeType",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "text-shape",
+      "type": "geo",
+      "x": 90,
+      "y": 180,
+      "width": 120,
+      "height": 60,
+      "label": "Text",
+      "color": 2,
+      "vv": {
+        "nodeType": "ShapeType",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "draw-shape",
+      "type": "geo",
+      "x": 230,
+      "y": 180,
+      "width": 120,
+      "height": 60,
+      "label": "Draw",
+      "color": 2,
+      "vv": {
+        "nodeType": "ShapeType",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "arrow-shape",
+      "type": "geo",
+      "x": 370,
+      "y": 180,
+      "width": 120,
+      "height": 60,
+      "label": "Arrow",
+      "color": 2,
+      "vv": {
+        "nodeType": "ShapeType",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "image-shape",
+      "type": "geo",
+      "x": -50,
+      "y": 270,
+      "width": 120,
+      "height": 60,
+      "label": "Image",
+      "color": 2,
+      "vv": {
+        "nodeType": "ShapeType",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "video-shape",
+      "type": "geo",
+      "x": 90,
+      "y": 270,
+      "width": 120,
+      "height": 60,
+      "label": "Video",
+      "color": 2,
+      "vv": {
+        "nodeType": "ShapeType",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "frame-shape",
+      "type": "geo",
+      "x": 230,
+      "y": 270,
+      "width": 120,
+      "height": 60,
+      "label": "Frame",
+      "color": 2,
+      "vv": {
+        "nodeType": "ShapeType",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "note-shape",
+      "type": "geo",
+      "x": 370,
+      "y": 270,
+      "width": 120,
+      "height": 60,
+      "label": "Note",
+      "color": 2,
+      "vv": {
+        "nodeType": "ShapeType",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "embed-shape",
+      "type": "geo",
+      "x": 510,
+      "y": 180,
+      "width": 120,
+      "height": 60,
+      "label": "Embed",
+      "color": 2,
+      "vv": {
+        "nodeType": "ShapeType",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "bookmark-shape",
+      "type": "geo",
+      "x": 510,
+      "y": 270,
+      "width": 120,
+      "height": 60,
+      "label": "Bookmark",
+      "color": 2,
+      "vv": {
+        "nodeType": "ShapeType",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "line-shape",
+      "type": "geo",
+      "x": 650,
+      "y": 180,
+      "width": 120,
+      "height": 60,
+      "label": "Line",
+      "color": 2,
+      "vv": {
+        "nodeType": "ShapeType",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "highlight-shape",
+      "type": "geo",
+      "x": 650,
+      "y": 270,
+      "width": 120,
+      "height": 60,
+      "label": "Highlight",
+      "color": 2,
+      "vv": {
+        "nodeType": "ShapeType",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "group-shape",
+      "type": "geo",
+      "x": 798,
+      "y": 246,
+      "width": 120,
+      "height": 60,
+      "label": "Group",
+      "color": 2,
+      "vv": {
+        "nodeType": "ShapeType",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "image-asset",
+      "type": "geo",
+      "x": 912,
+      "y": 81,
+      "width": 120,
+      "height": 60,
+      "label": "ImageAsset",
+      "color": 3,
+      "vv": {
+        "nodeType": "AssetType",
+        "shape": "diamond"
+      }
+    },
+    {
+      "id": "video-asset",
+      "type": "geo",
+      "x": 1173,
+      "y": 87,
+      "width": 120,
+      "height": 60,
+      "label": "VideoAsset",
+      "color": 3,
+      "vv": {
+        "nodeType": "AssetType",
+        "shape": "diamond"
+      }
+    },
+    {
+      "id": "bookmark-asset",
+      "type": "geo",
+      "x": 1037,
+      "y": 194,
+      "width": 130,
+      "height": 60,
+      "label": "BookmarkAsset",
+      "color": 3,
+      "vv": {
+        "nodeType": "AssetType",
+        "shape": "diamond"
+      }
+    },
+    {
+      "id": "arrow-binding",
+      "type": "geo",
+      "x": 1281,
+      "y": 3,
+      "width": 150,
+      "height": 60,
+      "label": "ArrowBinding",
+      "color": 6,
+      "vv": {
+        "nodeType": "SupportSystem",
+        "shape": "hexagon"
+      }
+    },
+    {
+      "id": "styles",
+      "type": "geo",
+      "x": 433,
+      "y": 405,
+      "width": 150,
+      "height": 80,
+      "label": "Style System",
+      "color": 6,
+      "vv": {
+        "nodeType": "SupportSystem",
+        "shape": "hexagon"
+      }
+    },
+    {
+      "id": "migrations",
+      "type": "geo",
+      "x": 105,
+      "y": -12,
+      "width": 150,
+      "height": 80,
+      "label": "Migrations",
+      "color": 6,
+      "vv": {
+        "nodeType": "SupportSystem",
+        "shape": "hexagon"
+      }
+    },
+    {
+      "id": "validation",
+      "type": "geo",
+      "x": -72,
+      "y": -11,
+      "width": 150,
+      "height": 80,
+      "label": "Validation",
+      "color": 6,
+      "vv": {
+        "nodeType": "SupportSystem",
+        "shape": "hexagon"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-tlrecord-tldocument",
+      "fromNode": "tlrecord",
+      "toNode": "tldocument",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlrecord-tlpage",
+      "fromNode": "tlrecord",
+      "toNode": "tlpage",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlrecord-tlshape",
+      "fromNode": "tlrecord",
+      "toNode": "tlshape",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlrecord-tlasset",
+      "fromNode": "tlrecord",
+      "toNode": "tlasset",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlrecord-tlbinding",
+      "fromNode": "tlrecord",
+      "toNode": "tlbinding",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlrecord-tlinstance",
+      "fromNode": "tlrecord",
+      "toNode": "tlinstance",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlrecord-tlcamera",
+      "fromNode": "tlrecord",
+      "toNode": "tlcamera",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlrecord-tlpresence",
+      "fromNode": "tlrecord",
+      "toNode": "tlpresence",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlrecord-tlpointer",
+      "fromNode": "tlrecord",
+      "toNode": "tlpointer",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlshape-geo",
+      "fromNode": "tlshape",
+      "toNode": "geo-shape",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlshape-text",
+      "fromNode": "tlshape",
+      "toNode": "text-shape",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlshape-draw",
+      "fromNode": "tlshape",
+      "toNode": "draw-shape",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlshape-arrow",
+      "fromNode": "tlshape",
+      "toNode": "arrow-shape",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlshape-image",
+      "fromNode": "tlshape",
+      "toNode": "image-shape",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlshape-video",
+      "fromNode": "tlshape",
+      "toNode": "video-shape",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlshape-frame",
+      "fromNode": "tlshape",
+      "toNode": "frame-shape",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlshape-note",
+      "fromNode": "tlshape",
+      "toNode": "note-shape",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlshape-embed",
+      "fromNode": "tlshape",
+      "toNode": "embed-shape",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlshape-bookmark",
+      "fromNode": "tlshape",
+      "toNode": "bookmark-shape",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlshape-line",
+      "fromNode": "tlshape",
+      "toNode": "line-shape",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlshape-highlight",
+      "fromNode": "tlshape",
+      "toNode": "highlight-shape",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlshape-group",
+      "fromNode": "tlshape",
+      "toNode": "group-shape",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlasset-image",
+      "fromNode": "tlasset",
+      "toNode": "image-asset",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlasset-video",
+      "fromNode": "tlasset",
+      "toNode": "video-asset",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlasset-bookmark",
+      "fromNode": "tlasset",
+      "toNode": "bookmark-asset",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlbinding-arrow",
+      "fromNode": "tlbinding",
+      "toNode": "arrow-binding",
+      "color": 6,
+      "vv": {
+        "edgeType": "Contains"
+      }
+    },
+    {
+      "id": "edge-tlstore-tlrecord",
+      "fromNode": "tlstore",
+      "toNode": "tlrecord",
+      "color": 3,
+      "vv": {
+        "edgeType": "Uses"
+      }
+    },
+    {
+      "id": "edge-createTLSchema-tlrecord",
+      "fromNode": "createTLSchema",
+      "toNode": "tlrecord",
+      "color": 3,
+      "vv": {
+        "edgeType": "Uses"
+      }
+    },
+    {
+      "id": "edge-shapes-styles",
+      "fromNode": "tlshape",
+      "toNode": "styles",
+      "color": 3,
+      "vv": {
+        "edgeType": "Uses"
+      }
+    },
+    {
+      "id": "edge-tlrecord-migrations",
+      "fromNode": "tlrecord",
+      "toNode": "migrations",
+      "color": 3,
+      "vv": {
+        "edgeType": "Uses"
+      }
+    },
+    {
+      "id": "edge-tlrecord-validation",
+      "fromNode": "tlrecord",
+      "toNode": "validation",
+      "color": 3,
+      "vv": {
+        "edgeType": "Uses"
+      }
+    }
+  ]
+}
