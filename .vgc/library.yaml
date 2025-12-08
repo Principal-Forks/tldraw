@@ -1,0 +1,34 @@
+version: "1.0.0"
+name: "tldraw Component Library"
+
+nodeComponents:
+  CorePackage:
+    description: "Core SDK package"
+    color: 4
+    icon: "Package"
+
+  SupportPackage:
+    description: "Supporting library package"
+    color: 5
+    icon: "Box"
+
+  Application:
+    description: "Application or demo"
+    color: 2
+    icon: "Globe"
+
+  Infrastructure:
+    description: "Build and infrastructure"
+    color: 6
+    icon: "Settings"
+
+edgeComponents:
+  Depends:
+    description: "Package dependency"
+    style: "solid"
+    label: "depends on"
+
+  Uses:
+    description: "Application uses package"
+    style: "dashed"
+    label: "uses"
