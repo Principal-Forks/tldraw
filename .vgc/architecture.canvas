@@ -1,0 +1,371 @@
+{
+  "vv": {
+    "name": "tldraw Architecture",
+    "version": "1.0.0",
+    "nodeTypes": {
+      "CorePackage": {
+        "description": "Core SDK package",
+        "color": 4,
+        "icon": "Package"
+      },
+      "SupportPackage": {
+        "description": "Supporting library package",
+        "color": 5,
+        "icon": "Box"
+      },
+      "Application": {
+        "description": "Application or demo",
+        "color": 2,
+        "icon": "Globe"
+      }
+    },
+    "edgeTypes": {
+      "Depends": {
+        "description": "Package dependency",
+        "style": "solid",
+        "label": "depends on"
+      },
+      "Uses": {
+        "description": "Application uses package",
+        "style": "dashed",
+        "label": "uses"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "state",
+      "type": "geo",
+      "x": -448,
+      "y": 717,
+      "width": 200,
+      "height": 100,
+      "label": "@tldraw/state",
+      "color": 5,
+      "vv": {
+        "nodeType": "SupportPackage",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "utils",
+      "type": "geo",
+      "x": -177,
+      "y": 722,
+      "width": 200,
+      "height": 100,
+      "label": "@tldraw/utils",
+      "color": 5,
+      "vv": {
+        "nodeType": "SupportPackage",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "validate",
+      "type": "geo",
+      "x": 257,
+      "y": 462,
+      "width": 200,
+      "height": 100,
+      "label": "@tldraw/validate",
+      "color": 5,
+      "vv": {
+        "nodeType": "SupportPackage",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "store",
+      "type": "geo",
+      "x": -443,
+      "y": 442,
+      "width": 200,
+      "height": 100,
+      "label": "@tldraw/store",
+      "color": 4,
+      "vv": {
+        "nodeType": "CorePackage",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "tlschema",
+      "type": "geo",
+      "x": -315,
+      "y": 259,
+      "width": 200,
+      "height": 100,
+      "label": "@tldraw/tlschema",
+      "color": 4,
+      "vv": {
+        "nodeType": "CorePackage",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "assets",
+      "type": "geo",
+      "x": 185,
+      "y": 38,
+      "width": 200,
+      "height": 100,
+      "label": "@tldraw/assets",
+      "color": 5,
+      "vv": {
+        "nodeType": "SupportPackage",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "editor",
+      "type": "geo",
+      "x": -164,
+      "y": 42,
+      "width": 200,
+      "height": 100,
+      "label": "@tldraw/editor",
+      "color": 4,
+      "vv": {
+        "nodeType": "CorePackage",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "sync",
+      "type": "geo",
+      "x": -443,
+      "y": 43,
+      "width": 200,
+      "height": 100,
+      "label": "@tldraw/sync",
+      "color": 4,
+      "vv": {
+        "nodeType": "CorePackage",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "tldraw",
+      "type": "geo",
+      "x": -12,
+      "y": -120,
+      "width": 200,
+      "height": 100,
+      "label": "@tldraw/tldraw",
+      "color": 4,
+      "vv": {
+        "nodeType": "CorePackage",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "examples",
+      "type": "geo",
+      "x": -216,
+      "y": -336,
+      "width": 150,
+      "height": 80,
+      "label": "examples",
+      "color": 2,
+      "vv": {
+        "nodeType": "Application",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "docs",
+      "type": "geo",
+      "x": 15,
+      "y": -341,
+      "width": 150,
+      "height": 80,
+      "label": "docs",
+      "color": 2,
+      "vv": {
+        "nodeType": "Application",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "dotcom-client",
+      "type": "geo",
+      "x": 458,
+      "y": -345,
+      "width": 150,
+      "height": 80,
+      "label": "dotcom",
+      "color": 2,
+      "vv": {
+        "nodeType": "Application",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "dotcom-sync",
+      "type": "geo",
+      "x": -418,
+      "y": -115,
+      "width": 160,
+      "height": 80,
+      "label": "sync-worker",
+      "color": 2,
+      "vv": {
+        "nodeType": "Application",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "vscode",
+      "type": "geo",
+      "x": 230,
+      "y": -342,
+      "width": 150,
+      "height": 80,
+      "label": "vscode",
+      "color": 2,
+      "vv": {
+        "nodeType": "Application",
+        "shape": "circle"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-store-state",
+      "fromNode": "store",
+      "toNode": "state",
+      "vv": {
+        "edgeType": "Depends"
+      }
+    },
+    {
+      "id": "edge-store-utils",
+      "fromNode": "store",
+      "toNode": "utils",
+      "vv": {
+        "edgeType": "Depends"
+      }
+    },
+    {
+      "id": "edge-tlschema-store",
+      "fromNode": "tlschema",
+      "toNode": "store",
+      "vv": {
+        "edgeType": "Depends"
+      }
+    },
+    {
+      "id": "edge-tlschema-validate",
+      "fromNode": "tlschema",
+      "toNode": "validate",
+      "vv": {
+        "edgeType": "Depends"
+      }
+    },
+    {
+      "id": "edge-editor-store",
+      "fromNode": "editor",
+      "toNode": "store",
+      "vv": {
+        "edgeType": "Depends"
+      }
+    },
+    {
+      "id": "edge-editor-tlschema",
+      "fromNode": "editor",
+      "toNode": "tlschema",
+      "vv": {
+        "edgeType": "Depends"
+      }
+    },
+    {
+      "id": "edge-editor-state",
+      "fromNode": "editor",
+      "toNode": "state",
+      "vv": {
+        "edgeType": "Depends"
+      }
+    },
+    {
+      "id": "edge-editor-utils",
+      "fromNode": "editor",
+      "toNode": "utils",
+      "vv": {
+        "edgeType": "Depends"
+      }
+    },
+    {
+      "id": "edge-tldraw-editor",
+      "fromNode": "tldraw",
+      "toNode": "editor",
+      "vv": {
+        "edgeType": "Depends"
+      }
+    },
+    {
+      "id": "edge-tldraw-assets",
+      "fromNode": "tldraw",
+      "toNode": "assets",
+      "vv": {
+        "edgeType": "Depends"
+      }
+    },
+    {
+      "id": "edge-sync-store",
+      "fromNode": "sync",
+      "toNode": "store",
+      "vv": {
+        "edgeType": "Depends"
+      }
+    },
+    {
+      "id": "edge-sync-tlschema",
+      "fromNode": "sync",
+      "toNode": "tlschema",
+      "vv": {
+        "edgeType": "Depends"
+      }
+    },
+    {
+      "id": "edge-examples-tldraw",
+      "fromNode": "examples",
+      "toNode": "tldraw",
+      "vv": {
+        "edgeType": "Uses"
+      }
+    },
+    {
+      "id": "edge-docs-tldraw",
+      "fromNode": "docs",
+      "toNode": "tldraw",
+      "vv": {
+        "edgeType": "Uses"
+      }
+    },
+    {
+      "id": "edge-dotcom-tldraw",
+      "fromNode": "dotcom-client",
+      "toNode": "tldraw",
+      "vv": {
+        "edgeType": "Uses"
+      }
+    },
+    {
+      "id": "edge-dotcom-sync",
+      "fromNode": "dotcom-sync",
+      "toNode": "sync",
+      "vv": {
+        "edgeType": "Uses"
+      }
+    },
+    {
+      "id": "edge-vscode-tldraw",
+      "fromNode": "vscode",
+      "toNode": "tldraw",
+      "vv": {
+        "edgeType": "Uses"
+      }
+    }
+  ]
+}
