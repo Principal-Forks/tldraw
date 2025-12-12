@@ -1,5 +1,5 @@
 {
-  "vv": {
+  "pv": {
     "name": "tldraw Architecture",
     "version": "1.0.0",
     "nodeTypes": {
@@ -21,12 +21,10 @@
     },
     "edgeTypes": {
       "Depends": {
-        "description": "Package dependency",
         "style": "solid",
         "label": "depends on"
       },
       "Uses": {
-        "description": "Application uses package",
         "style": "dashed",
         "label": "uses"
       }
@@ -40,11 +38,11 @@
       "y": 717,
       "width": 200,
       "height": 100,
-      "label": "@tldraw/state",
       "color": 5,
-      "vv": {
+      "pv": {
         "nodeType": "SupportPackage",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "@tldraw/state"
       }
     },
     {
@@ -54,11 +52,11 @@
       "y": 722,
       "width": 200,
       "height": 100,
-      "label": "@tldraw/utils",
       "color": 5,
-      "vv": {
+      "pv": {
         "nodeType": "SupportPackage",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "@tldraw/utils"
       }
     },
     {
@@ -68,11 +66,11 @@
       "y": 462,
       "width": 200,
       "height": 100,
-      "label": "@tldraw/validate",
       "color": 5,
-      "vv": {
+      "pv": {
         "nodeType": "SupportPackage",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "@tldraw/validate"
       }
     },
     {
@@ -82,11 +80,11 @@
       "y": 442,
       "width": 200,
       "height": 100,
-      "label": "@tldraw/store",
       "color": 4,
-      "vv": {
+      "pv": {
         "nodeType": "CorePackage",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "@tldraw/store"
       }
     },
     {
@@ -96,11 +94,11 @@
       "y": 259,
       "width": 200,
       "height": 100,
-      "label": "@tldraw/tlschema",
       "color": 4,
-      "vv": {
+      "pv": {
         "nodeType": "CorePackage",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "@tldraw/tlschema"
       }
     },
     {
@@ -110,11 +108,11 @@
       "y": 38,
       "width": 200,
       "height": 100,
-      "label": "@tldraw/assets",
       "color": 5,
-      "vv": {
+      "pv": {
         "nodeType": "SupportPackage",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "@tldraw/assets"
       }
     },
     {
@@ -124,11 +122,11 @@
       "y": 42,
       "width": 200,
       "height": 100,
-      "label": "@tldraw/editor",
       "color": 4,
-      "vv": {
+      "pv": {
         "nodeType": "CorePackage",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "@tldraw/editor"
       }
     },
     {
@@ -138,11 +136,11 @@
       "y": 43,
       "width": 200,
       "height": 100,
-      "label": "@tldraw/sync",
       "color": 4,
-      "vv": {
+      "pv": {
         "nodeType": "CorePackage",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "@tldraw/sync"
       }
     },
     {
@@ -152,11 +150,11 @@
       "y": -120,
       "width": 200,
       "height": 100,
-      "label": "@tldraw/tldraw",
       "color": 4,
-      "vv": {
+      "pv": {
         "nodeType": "CorePackage",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "@tldraw/tldraw"
       }
     },
     {
@@ -166,11 +164,11 @@
       "y": -336,
       "width": 150,
       "height": 80,
-      "label": "examples",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "Application",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "examples"
       }
     },
     {
@@ -180,11 +178,11 @@
       "y": -341,
       "width": 150,
       "height": 80,
-      "label": "docs",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "Application",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "docs"
       }
     },
     {
@@ -194,11 +192,11 @@
       "y": -345,
       "width": 150,
       "height": 80,
-      "label": "dotcom",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "Application",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "dotcom"
       }
     },
     {
@@ -208,11 +206,11 @@
       "y": -115,
       "width": 160,
       "height": 80,
-      "label": "sync-worker",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "Application",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "sync-worker"
       }
     },
     {
@@ -222,11 +220,11 @@
       "y": -342,
       "width": 150,
       "height": 80,
-      "label": "vscode",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "Application",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "vscode"
       }
     }
   ],
@@ -235,7 +233,7 @@
       "id": "edge-store-state",
       "fromNode": "store",
       "toNode": "state",
-      "vv": {
+      "pv": {
         "edgeType": "Depends"
       }
     },
@@ -243,7 +241,7 @@
       "id": "edge-store-utils",
       "fromNode": "store",
       "toNode": "utils",
-      "vv": {
+      "pv": {
         "edgeType": "Depends"
       }
     },
@@ -251,7 +249,7 @@
       "id": "edge-tlschema-store",
       "fromNode": "tlschema",
       "toNode": "store",
-      "vv": {
+      "pv": {
         "edgeType": "Depends"
       }
     },
@@ -259,7 +257,7 @@
       "id": "edge-tlschema-validate",
       "fromNode": "tlschema",
       "toNode": "validate",
-      "vv": {
+      "pv": {
         "edgeType": "Depends"
       }
     },
@@ -267,7 +265,7 @@
       "id": "edge-editor-store",
       "fromNode": "editor",
       "toNode": "store",
-      "vv": {
+      "pv": {
         "edgeType": "Depends"
       }
     },
@@ -275,7 +273,7 @@
       "id": "edge-editor-tlschema",
       "fromNode": "editor",
       "toNode": "tlschema",
-      "vv": {
+      "pv": {
         "edgeType": "Depends"
       }
     },
@@ -283,7 +281,7 @@
       "id": "edge-editor-state",
       "fromNode": "editor",
       "toNode": "state",
-      "vv": {
+      "pv": {
         "edgeType": "Depends"
       }
     },
@@ -291,7 +289,7 @@
       "id": "edge-editor-utils",
       "fromNode": "editor",
       "toNode": "utils",
-      "vv": {
+      "pv": {
         "edgeType": "Depends"
       }
     },
@@ -299,7 +297,7 @@
       "id": "edge-tldraw-editor",
       "fromNode": "tldraw",
       "toNode": "editor",
-      "vv": {
+      "pv": {
         "edgeType": "Depends"
       }
     },
@@ -307,7 +305,7 @@
       "id": "edge-tldraw-assets",
       "fromNode": "tldraw",
       "toNode": "assets",
-      "vv": {
+      "pv": {
         "edgeType": "Depends"
       }
     },
@@ -315,7 +313,7 @@
       "id": "edge-sync-store",
       "fromNode": "sync",
       "toNode": "store",
-      "vv": {
+      "pv": {
         "edgeType": "Depends"
       }
     },
@@ -323,7 +321,7 @@
       "id": "edge-sync-tlschema",
       "fromNode": "sync",
       "toNode": "tlschema",
-      "vv": {
+      "pv": {
         "edgeType": "Depends"
       }
     },
@@ -331,7 +329,7 @@
       "id": "edge-examples-tldraw",
       "fromNode": "examples",
       "toNode": "tldraw",
-      "vv": {
+      "pv": {
         "edgeType": "Uses"
       }
     },
@@ -339,7 +337,7 @@
       "id": "edge-docs-tldraw",
       "fromNode": "docs",
       "toNode": "tldraw",
-      "vv": {
+      "pv": {
         "edgeType": "Uses"
       }
     },
@@ -347,7 +345,7 @@
       "id": "edge-dotcom-tldraw",
       "fromNode": "dotcom-client",
       "toNode": "tldraw",
-      "vv": {
+      "pv": {
         "edgeType": "Uses"
       }
     },
@@ -355,7 +353,7 @@
       "id": "edge-dotcom-sync",
       "fromNode": "dotcom-sync",
       "toNode": "sync",
-      "vv": {
+      "pv": {
         "edgeType": "Uses"
       }
     },
@@ -363,7 +361,7 @@
       "id": "edge-vscode-tldraw",
       "fromNode": "vscode",
       "toNode": "tldraw",
-      "vv": {
+      "pv": {
         "edgeType": "Uses"
       }
     }

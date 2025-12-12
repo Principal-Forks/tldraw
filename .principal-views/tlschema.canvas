@@ -1,5 +1,5 @@
 {
-  "vv": {
+  "pv": {
     "name": "tlschema Architecture",
     "version": "1.0.0",
     "nodeTypes": {
@@ -31,17 +31,14 @@
     },
     "edgeTypes": {
       "Contains": {
-        "description": "Contains relationship",
         "style": "solid",
         "label": "contains"
       },
       "Uses": {
-        "description": "Uses relationship",
         "style": "dashed",
         "label": "uses"
       },
       "Extends": {
-        "description": "Extends relationship",
         "style": "dotted",
         "label": "extends"
       }
@@ -55,11 +52,11 @@
       "y": -628,
       "width": 200,
       "height": 100,
-      "label": "TLStore",
       "color": 4,
-      "vv": {
+      "pv": {
         "nodeType": "CoreModule",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "TLStore"
       }
     },
     {
@@ -69,11 +66,11 @@
       "y": -628,
       "width": 200,
       "height": 100,
-      "label": "createTLSchema",
       "color": 4,
-      "vv": {
+      "pv": {
         "nodeType": "CoreModule",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "createTLSchema"
       }
     },
     {
@@ -83,11 +80,11 @@
       "y": -421,
       "width": 200,
       "height": 100,
-      "label": "TLRecord (union)",
       "color": 4,
-      "vv": {
+      "pv": {
         "nodeType": "CoreModule",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "TLRecord (union)"
       }
     },
     {
@@ -97,11 +94,11 @@
       "y": -136,
       "width": 150,
       "height": 80,
-      "label": "TLDocument",
       "color": 5,
-      "vv": {
+      "pv": {
         "nodeType": "RecordType",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "TLDocument"
       }
     },
     {
@@ -111,11 +108,11 @@
       "y": -136,
       "width": 150,
       "height": 80,
-      "label": "TLPage",
       "color": 5,
-      "vv": {
+      "pv": {
         "nodeType": "RecordType",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "TLPage"
       }
     },
     {
@@ -125,11 +122,11 @@
       "y": -128,
       "width": 150,
       "height": 80,
-      "label": "TLShape",
       "color": 5,
-      "vv": {
+      "pv": {
         "nodeType": "RecordType",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "TLShape"
       }
     },
     {
@@ -139,11 +136,11 @@
       "y": -124,
       "width": 150,
       "height": 80,
-      "label": "TLAsset",
       "color": 5,
-      "vv": {
+      "pv": {
         "nodeType": "RecordType",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "TLAsset"
       }
     },
     {
@@ -153,11 +150,11 @@
       "y": -122,
       "width": 150,
       "height": 80,
-      "label": "TLBinding",
       "color": 5,
-      "vv": {
+      "pv": {
         "nodeType": "RecordType",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "TLBinding"
       }
     },
     {
@@ -167,11 +164,11 @@
       "y": -117,
       "width": 150,
       "height": 80,
-      "label": "TLInstance",
       "color": 5,
-      "vv": {
+      "pv": {
         "nodeType": "RecordType",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "TLInstance"
       }
     },
     {
@@ -181,11 +178,11 @@
       "y": -135,
       "width": 150,
       "height": 80,
-      "label": "TLCamera",
       "color": 5,
-      "vv": {
+      "pv": {
         "nodeType": "RecordType",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "TLCamera"
       }
     },
     {
@@ -195,11 +192,11 @@
       "y": -131,
       "width": 150,
       "height": 80,
-      "label": "TLPresence",
       "color": 5,
-      "vv": {
+      "pv": {
         "nodeType": "RecordType",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "TLPresence"
       }
     },
     {
@@ -209,11 +206,11 @@
       "y": -130,
       "width": 150,
       "height": 80,
-      "label": "TLPointer",
       "color": 5,
-      "vv": {
+      "pv": {
         "nodeType": "RecordType",
-        "shape": "rectangle"
+        "shape": "rectangle",
+        "description": "TLPointer"
       }
     },
     {
@@ -223,11 +220,11 @@
       "y": 180,
       "width": 120,
       "height": 60,
-      "label": "Geo",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "ShapeType",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "Geo"
       }
     },
     {
@@ -237,11 +234,11 @@
       "y": 180,
       "width": 120,
       "height": 60,
-      "label": "Text",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "ShapeType",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "Text"
       }
     },
     {
@@ -251,11 +248,11 @@
       "y": 180,
       "width": 120,
       "height": 60,
-      "label": "Draw",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "ShapeType",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "Draw"
       }
     },
     {
@@ -265,11 +262,11 @@
       "y": 180,
       "width": 120,
       "height": 60,
-      "label": "Arrow",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "ShapeType",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "Arrow"
       }
     },
     {
@@ -279,11 +276,11 @@
       "y": 270,
       "width": 120,
       "height": 60,
-      "label": "Image",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "ShapeType",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "Image"
       }
     },
     {
@@ -293,11 +290,11 @@
       "y": 270,
       "width": 120,
       "height": 60,
-      "label": "Video",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "ShapeType",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "Video"
       }
     },
     {
@@ -307,11 +304,11 @@
       "y": 270,
       "width": 120,
       "height": 60,
-      "label": "Frame",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "ShapeType",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "Frame"
       }
     },
     {
@@ -321,11 +318,11 @@
       "y": 270,
       "width": 120,
       "height": 60,
-      "label": "Note",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "ShapeType",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "Note"
       }
     },
     {
@@ -335,11 +332,11 @@
       "y": 180,
       "width": 120,
       "height": 60,
-      "label": "Embed",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "ShapeType",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "Embed"
       }
     },
     {
@@ -349,11 +346,11 @@
       "y": 270,
       "width": 120,
       "height": 60,
-      "label": "Bookmark",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "ShapeType",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "Bookmark"
       }
     },
     {
@@ -363,11 +360,11 @@
       "y": 180,
       "width": 120,
       "height": 60,
-      "label": "Line",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "ShapeType",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "Line"
       }
     },
     {
@@ -377,11 +374,11 @@
       "y": 270,
       "width": 120,
       "height": 60,
-      "label": "Highlight",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "ShapeType",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "Highlight"
       }
     },
     {
@@ -391,11 +388,11 @@
       "y": 246,
       "width": 120,
       "height": 60,
-      "label": "Group",
       "color": 2,
-      "vv": {
+      "pv": {
         "nodeType": "ShapeType",
-        "shape": "circle"
+        "shape": "circle",
+        "description": "Group"
       }
     },
     {
@@ -405,11 +402,11 @@
       "y": 81,
       "width": 120,
       "height": 60,
-      "label": "ImageAsset",
       "color": 3,
-      "vv": {
+      "pv": {
         "nodeType": "AssetType",
-        "shape": "diamond"
+        "shape": "diamond",
+        "description": "ImageAsset"
       }
     },
     {
@@ -419,11 +416,11 @@
       "y": 87,
       "width": 120,
       "height": 60,
-      "label": "VideoAsset",
       "color": 3,
-      "vv": {
+      "pv": {
         "nodeType": "AssetType",
-        "shape": "diamond"
+        "shape": "diamond",
+        "description": "VideoAsset"
       }
     },
     {
@@ -433,11 +430,11 @@
       "y": 194,
       "width": 130,
       "height": 60,
-      "label": "BookmarkAsset",
       "color": 3,
-      "vv": {
+      "pv": {
         "nodeType": "AssetType",
-        "shape": "diamond"
+        "shape": "diamond",
+        "description": "BookmarkAsset"
       }
     },
     {
@@ -447,11 +444,11 @@
       "y": 3,
       "width": 150,
       "height": 60,
-      "label": "ArrowBinding",
       "color": 6,
-      "vv": {
+      "pv": {
         "nodeType": "SupportSystem",
-        "shape": "hexagon"
+        "shape": "hexagon",
+        "description": "ArrowBinding"
       }
     },
     {
@@ -461,11 +458,11 @@
       "y": 405,
       "width": 150,
       "height": 80,
-      "label": "Style System",
       "color": 6,
-      "vv": {
+      "pv": {
         "nodeType": "SupportSystem",
-        "shape": "hexagon"
+        "shape": "hexagon",
+        "description": "Style System"
       }
     },
     {
@@ -475,11 +472,11 @@
       "y": -12,
       "width": 150,
       "height": 80,
-      "label": "Migrations",
       "color": 6,
-      "vv": {
+      "pv": {
         "nodeType": "SupportSystem",
-        "shape": "hexagon"
+        "shape": "hexagon",
+        "description": "Migrations"
       }
     },
     {
@@ -489,11 +486,11 @@
       "y": -11,
       "width": 150,
       "height": 80,
-      "label": "Validation",
       "color": 6,
-      "vv": {
+      "pv": {
         "nodeType": "SupportSystem",
-        "shape": "hexagon"
+        "shape": "hexagon",
+        "description": "Validation"
       }
     }
   ],
@@ -503,7 +500,7 @@
       "fromNode": "tlrecord",
       "toNode": "tldocument",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -512,7 +509,7 @@
       "fromNode": "tlrecord",
       "toNode": "tlpage",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -521,7 +518,7 @@
       "fromNode": "tlrecord",
       "toNode": "tlshape",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -530,7 +527,7 @@
       "fromNode": "tlrecord",
       "toNode": "tlasset",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -539,7 +536,7 @@
       "fromNode": "tlrecord",
       "toNode": "tlbinding",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -548,7 +545,7 @@
       "fromNode": "tlrecord",
       "toNode": "tlinstance",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -557,7 +554,7 @@
       "fromNode": "tlrecord",
       "toNode": "tlcamera",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -566,7 +563,7 @@
       "fromNode": "tlrecord",
       "toNode": "tlpresence",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -575,7 +572,7 @@
       "fromNode": "tlrecord",
       "toNode": "tlpointer",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -584,7 +581,7 @@
       "fromNode": "tlshape",
       "toNode": "geo-shape",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -593,7 +590,7 @@
       "fromNode": "tlshape",
       "toNode": "text-shape",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -602,7 +599,7 @@
       "fromNode": "tlshape",
       "toNode": "draw-shape",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -611,7 +608,7 @@
       "fromNode": "tlshape",
       "toNode": "arrow-shape",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -620,7 +617,7 @@
       "fromNode": "tlshape",
       "toNode": "image-shape",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -629,7 +626,7 @@
       "fromNode": "tlshape",
       "toNode": "video-shape",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -638,7 +635,7 @@
       "fromNode": "tlshape",
       "toNode": "frame-shape",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -647,7 +644,7 @@
       "fromNode": "tlshape",
       "toNode": "note-shape",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -656,7 +653,7 @@
       "fromNode": "tlshape",
       "toNode": "embed-shape",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -665,7 +662,7 @@
       "fromNode": "tlshape",
       "toNode": "bookmark-shape",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -674,7 +671,7 @@
       "fromNode": "tlshape",
       "toNode": "line-shape",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -683,7 +680,7 @@
       "fromNode": "tlshape",
       "toNode": "highlight-shape",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -692,7 +689,7 @@
       "fromNode": "tlshape",
       "toNode": "group-shape",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -701,7 +698,7 @@
       "fromNode": "tlasset",
       "toNode": "image-asset",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -710,7 +707,7 @@
       "fromNode": "tlasset",
       "toNode": "video-asset",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -719,7 +716,7 @@
       "fromNode": "tlasset",
       "toNode": "bookmark-asset",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -728,7 +725,7 @@
       "fromNode": "tlbinding",
       "toNode": "arrow-binding",
       "color": 6,
-      "vv": {
+      "pv": {
         "edgeType": "Contains"
       }
     },
@@ -737,7 +734,7 @@
       "fromNode": "tlstore",
       "toNode": "tlrecord",
       "color": 3,
-      "vv": {
+      "pv": {
         "edgeType": "Uses"
       }
     },
@@ -746,7 +743,7 @@
       "fromNode": "createTLSchema",
       "toNode": "tlrecord",
       "color": 3,
-      "vv": {
+      "pv": {
         "edgeType": "Uses"
       }
     },
@@ -755,7 +752,7 @@
       "fromNode": "tlshape",
       "toNode": "styles",
       "color": 3,
-      "vv": {
+      "pv": {
         "edgeType": "Uses"
       }
     },
@@ -764,7 +761,7 @@
       "fromNode": "tlrecord",
       "toNode": "migrations",
       "color": 3,
-      "vv": {
+      "pv": {
         "edgeType": "Uses"
       }
     },
@@ -773,7 +770,7 @@
       "fromNode": "tlrecord",
       "toNode": "validation",
       "color": 3,
-      "vv": {
+      "pv": {
         "edgeType": "Uses"
       }
     }

@@ -8,3 +8,6 @@ npx lazy run build-i18n
 git add apps/*/locales/*.json
 git add apps/*/locales-compiled/*.json
 yarn lint-staged
+
+# Run principal view linting
+privu lint --quiet
