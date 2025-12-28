@@ -28,6 +28,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: Build packages
+        run: yarn build
+
       - name: Install Quality Lens CLI
         run: npm install -g @principal-ai/quality-lens-cli
 
