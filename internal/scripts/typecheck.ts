@@ -13,7 +13,11 @@ async function main() {
 		if (tsconfigExists) tsconfigFiles.push(tsconfigFile)
 	}
 
-	nicelog('Typechecking files:', tsconfigFiles)
+	const isCiMode = process.argv.includes('--ci')
+
+	if (!isCiMode) {
+		nicelog('Typechecking files:', tsconfigFiles)
+	}
 
 	const args = ['--build']
 	const isWatchMode = process.argv.includes('--watch')
@@ -21,6 +25,7 @@ async function main() {
 	if (isWatchMode) args.push('--watch')
 	if (process.argv.includes('--preserveWatchOutput')) args.push('--preserveWatchOutput')
 	if (process.argv.includes('--extendedDiagnostics')) args.push('--extendedDiagnostics')
+	if (isCiMode) args.push('--pretty', 'false')
 
 	const compilerPath = join(REPO_ROOT, 'node_modules/.bin/tsgo')
 	nicelog(`Using tsgo (TypeScript native compiler) for type checking`)
@@ -55,6 +60,11 @@ async function main() {
 			{ cwd: REPO_ROOT },
 			(err) => {
 				if (err) {
+					// In CI mode, just exit with the error code - output is already streamed
+					if (isCiMode) {
+						process.exit(err.code || 1)
+					}
+
 					// Extract TypeScript errors from the output
 					const allOutput = output.join('') + errors.join('')
 					const tsErrors = allOutput.split('\n').filter((line) => {
