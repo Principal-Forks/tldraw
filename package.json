@@ -59,6 +59,7 @@
 		"format": "prettier --write --cache '**/*.{yml,yaml,json,md,mdx,html,css,js,jsx,ts,tsx,cjs,mjs}'",
 		"format-current": "prettier --write --cache $(git diff --name-only --diff-filter d | xargs)",
 		"typecheck": "yarn refresh-assets && tsx internal/scripts/typecheck.ts",
+		"typecheck:ci": "tsx internal/scripts/typecheck.ts --ci",
 		"profile-typescript": "tsx internal/scripts/profile-typescript.ts",
 		"profile-tsserver": "tsx internal/scripts/profile-tsserver.ts",
 		"check-packages": "tsx internal/scripts/check-packages.ts",
