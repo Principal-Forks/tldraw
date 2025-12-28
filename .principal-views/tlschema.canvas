@@ -56,7 +56,8 @@
       "pv": {
         "nodeType": "CoreModule",
         "shape": "rectangle",
-        "description": "TLStore"
+        "name": "TLStore",
+        "description": "Main store interface for tldraw documents"
       }
     },
     {
@@ -70,7 +71,8 @@
       "pv": {
         "nodeType": "CoreModule",
         "shape": "rectangle",
-        "description": "createTLSchema"
+        "name": "createTLSchema",
+        "description": "Factory function to create tldraw schema"
       }
     },
     {
@@ -84,7 +86,8 @@
       "pv": {
         "nodeType": "CoreModule",
         "shape": "rectangle",
-        "description": "TLRecord (union)"
+        "name": "TLRecord",
+        "description": "Union type of all record types"
       }
     },
     {
@@ -98,7 +101,8 @@
       "pv": {
         "nodeType": "RecordType",
         "shape": "rectangle",
-        "description": "TLDocument"
+        "name": "TLDocument",
+        "description": "Document metadata record"
       }
     },
     {
@@ -112,7 +116,8 @@
       "pv": {
         "nodeType": "RecordType",
         "shape": "rectangle",
-        "description": "TLPage"
+        "name": "TLPage",
+        "description": "Page record containing shapes"
       }
     },
     {
@@ -126,7 +131,8 @@
       "pv": {
         "nodeType": "RecordType",
         "shape": "rectangle",
-        "description": "TLShape"
+        "name": "TLShape",
+        "description": "Base shape record type"
       }
     },
     {
@@ -140,7 +146,8 @@
       "pv": {
         "nodeType": "RecordType",
         "shape": "rectangle",
-        "description": "TLAsset"
+        "name": "TLAsset",
+        "description": "Asset record for media"
       }
     },
     {
@@ -154,7 +161,8 @@
       "pv": {
         "nodeType": "RecordType",
         "shape": "rectangle",
-        "description": "TLBinding"
+        "name": "TLBinding",
+        "description": "Binding between shapes"
       }
     },
     {
@@ -168,7 +176,8 @@
       "pv": {
         "nodeType": "RecordType",
         "shape": "rectangle",
-        "description": "TLInstance"
+        "name": "TLInstance",
+        "description": "Editor instance state"
       }
     },
     {
@@ -182,7 +191,8 @@
       "pv": {
         "nodeType": "RecordType",
         "shape": "rectangle",
-        "description": "TLCamera"
+        "name": "TLCamera",
+        "description": "Camera position and zoom"
       }
     },
     {
@@ -196,7 +206,8 @@
       "pv": {
         "nodeType": "RecordType",
         "shape": "rectangle",
-        "description": "TLPresence"
+        "name": "TLPresence",
+        "description": "User presence for multiplayer"
       }
     },
     {
@@ -210,7 +221,8 @@
       "pv": {
         "nodeType": "RecordType",
         "shape": "rectangle",
-        "description": "TLPointer"
+        "name": "TLPointer",
+        "description": "Pointer state record"
       }
     },
     {
@@ -224,7 +236,8 @@
       "pv": {
         "nodeType": "ShapeType",
         "shape": "circle",
-        "description": "Geo"
+        "name": "Geo",
+        "description": "Geometric shapes (rectangle, ellipse, etc.)"
       }
     },
     {
@@ -238,7 +251,8 @@
       "pv": {
         "nodeType": "ShapeType",
         "shape": "circle",
-        "description": "Text"
+        "name": "Text",
+        "description": "Text shape"
       }
     },
     {
@@ -252,7 +266,8 @@
       "pv": {
         "nodeType": "ShapeType",
         "shape": "circle",
-        "description": "Draw"
+        "name": "Draw",
+        "description": "Freehand drawing shape"
       }
     },
     {
@@ -266,7 +281,8 @@
       "pv": {
         "nodeType": "ShapeType",
         "shape": "circle",
-        "description": "Arrow"
+        "name": "Arrow",
+        "description": "Arrow connector shape"
       }
     },
     {
@@ -280,7 +296,8 @@
       "pv": {
         "nodeType": "ShapeType",
         "shape": "circle",
-        "description": "Image"
+        "name": "Image",
+        "description": "Image shape"
       }
     },
     {
@@ -294,7 +311,8 @@
       "pv": {
         "nodeType": "ShapeType",
         "shape": "circle",
-        "description": "Video"
+        "name": "Video",
+        "description": "Video shape"
       }
     },
     {
@@ -308,7 +326,8 @@
       "pv": {
         "nodeType": "ShapeType",
         "shape": "circle",
-        "description": "Frame"
+        "name": "Frame",
+        "description": "Frame container shape"
       }
     },
     {
@@ -322,7 +341,8 @@
       "pv": {
         "nodeType": "ShapeType",
         "shape": "circle",
-        "description": "Note"
+        "name": "Note",
+        "description": "Sticky note shape"
       }
     },
     {
@@ -336,7 +356,8 @@
       "pv": {
         "nodeType": "ShapeType",
         "shape": "circle",
-        "description": "Embed"
+        "name": "Embed",
+        "description": "Embedded content shape"
       }
     },
     {
@@ -350,7 +371,8 @@
       "pv": {
         "nodeType": "ShapeType",
         "shape": "circle",
-        "description": "Bookmark"
+        "name": "Bookmark",
+        "description": "URL bookmark shape"
       }
     },
     {
@@ -364,7 +386,8 @@
       "pv": {
         "nodeType": "ShapeType",
         "shape": "circle",
-        "description": "Line"
+        "name": "Line",
+        "description": "Line shape"
       }
     },
     {
@@ -378,7 +401,8 @@
       "pv": {
         "nodeType": "ShapeType",
         "shape": "circle",
-        "description": "Highlight"
+        "name": "Highlight",
+        "description": "Highlighter shape"
       }
     },
     {
@@ -392,7 +416,8 @@
       "pv": {
         "nodeType": "ShapeType",
         "shape": "circle",
-        "description": "Group"
+        "name": "Group",
+        "description": "Group container shape"
       }
     },
     {
@@ -406,7 +431,8 @@
       "pv": {
         "nodeType": "AssetType",
         "shape": "diamond",
-        "description": "ImageAsset"
+        "name": "ImageAsset",
+        "description": "Image asset record"
       }
     },
     {
@@ -420,7 +446,8 @@
       "pv": {
         "nodeType": "AssetType",
         "shape": "diamond",
-        "description": "VideoAsset"
+        "name": "VideoAsset",
+        "description": "Video asset record"
       }
     },
     {
@@ -434,7 +461,8 @@
       "pv": {
         "nodeType": "AssetType",
         "shape": "diamond",
-        "description": "BookmarkAsset"
+        "name": "BookmarkAsset",
+        "description": "Bookmark asset record"
       }
     },
     {
@@ -448,7 +476,8 @@
       "pv": {
         "nodeType": "SupportSystem",
         "shape": "hexagon",
-        "description": "ArrowBinding"
+        "name": "ArrowBinding",
+        "description": "Arrow to shape binding"
       }
     },
     {
@@ -462,7 +491,8 @@
       "pv": {
         "nodeType": "SupportSystem",
         "shape": "hexagon",
-        "description": "Style System"
+        "name": "Style System",
+        "description": "Shape styling system"
       }
     },
     {
@@ -476,7 +506,8 @@
       "pv": {
         "nodeType": "SupportSystem",
         "shape": "hexagon",
-        "description": "Migrations"
+        "name": "Migrations",
+        "description": "Schema migration system"
       }
     },
     {
@@ -490,7 +521,8 @@
       "pv": {
         "nodeType": "SupportSystem",
         "shape": "hexagon",
-        "description": "Validation"
+        "name": "Validation",
+        "description": "Record validation system"
       }
     }
   ],
@@ -498,7 +530,9 @@
     {
       "id": "edge-tlrecord-tldocument",
       "fromNode": "tlrecord",
+      "fromSide": "left",
       "toNode": "tldocument",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -507,7 +541,9 @@
     {
       "id": "edge-tlrecord-tlpage",
       "fromNode": "tlrecord",
+      "fromSide": "left",
       "toNode": "tlpage",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -516,7 +552,9 @@
     {
       "id": "edge-tlrecord-tlshape",
       "fromNode": "tlrecord",
+      "fromSide": "right",
       "toNode": "tlshape",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -525,7 +563,9 @@
     {
       "id": "edge-tlrecord-tlasset",
       "fromNode": "tlrecord",
+      "fromSide": "right",
       "toNode": "tlasset",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -534,7 +574,9 @@
     {
       "id": "edge-tlrecord-tlbinding",
       "fromNode": "tlrecord",
+      "fromSide": "right",
       "toNode": "tlbinding",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -543,7 +585,9 @@
     {
       "id": "edge-tlrecord-tlinstance",
       "fromNode": "tlrecord",
+      "fromSide": "right",
       "toNode": "tlinstance",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -552,7 +596,9 @@
     {
       "id": "edge-tlrecord-tlcamera",
       "fromNode": "tlrecord",
+      "fromSide": "left",
       "toNode": "tlcamera",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -561,7 +607,9 @@
     {
       "id": "edge-tlrecord-tlpresence",
       "fromNode": "tlrecord",
+      "fromSide": "bottom",
       "toNode": "tlpresence",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -570,7 +618,9 @@
     {
       "id": "edge-tlrecord-tlpointer",
       "fromNode": "tlrecord",
+      "fromSide": "bottom",
       "toNode": "tlpointer",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -579,7 +629,9 @@
     {
       "id": "edge-tlshape-geo",
       "fromNode": "tlshape",
+      "fromSide": "bottom",
       "toNode": "geo-shape",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -588,7 +640,9 @@
     {
       "id": "edge-tlshape-text",
       "fromNode": "tlshape",
+      "fromSide": "bottom",
       "toNode": "text-shape",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -597,7 +651,9 @@
     {
       "id": "edge-tlshape-draw",
       "fromNode": "tlshape",
+      "fromSide": "bottom",
       "toNode": "draw-shape",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -606,7 +662,9 @@
     {
       "id": "edge-tlshape-arrow",
       "fromNode": "tlshape",
+      "fromSide": "bottom",
       "toNode": "arrow-shape",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -615,7 +673,9 @@
     {
       "id": "edge-tlshape-image",
       "fromNode": "tlshape",
+      "fromSide": "bottom",
       "toNode": "image-shape",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -624,7 +684,9 @@
     {
       "id": "edge-tlshape-video",
       "fromNode": "tlshape",
+      "fromSide": "bottom",
       "toNode": "video-shape",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -633,7 +695,9 @@
     {
       "id": "edge-tlshape-frame",
       "fromNode": "tlshape",
+      "fromSide": "bottom",
       "toNode": "frame-shape",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -642,7 +706,9 @@
     {
       "id": "edge-tlshape-note",
       "fromNode": "tlshape",
+      "fromSide": "bottom",
       "toNode": "note-shape",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -651,7 +717,9 @@
     {
       "id": "edge-tlshape-embed",
       "fromNode": "tlshape",
+      "fromSide": "bottom",
       "toNode": "embed-shape",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -660,7 +728,9 @@
     {
       "id": "edge-tlshape-bookmark",
       "fromNode": "tlshape",
+      "fromSide": "bottom",
       "toNode": "bookmark-shape",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -669,7 +739,9 @@
     {
       "id": "edge-tlshape-line",
       "fromNode": "tlshape",
+      "fromSide": "bottom",
       "toNode": "line-shape",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -678,7 +750,9 @@
     {
       "id": "edge-tlshape-highlight",
       "fromNode": "tlshape",
+      "fromSide": "bottom",
       "toNode": "highlight-shape",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -687,7 +761,9 @@
     {
       "id": "edge-tlshape-group",
       "fromNode": "tlshape",
+      "fromSide": "bottom",
       "toNode": "group-shape",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -696,7 +772,9 @@
     {
       "id": "edge-tlasset-image",
       "fromNode": "tlasset",
+      "fromSide": "bottom",
       "toNode": "image-asset",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -705,7 +783,9 @@
     {
       "id": "edge-tlasset-video",
       "fromNode": "tlasset",
+      "fromSide": "bottom",
       "toNode": "video-asset",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -714,7 +794,9 @@
     {
       "id": "edge-tlasset-bookmark",
       "fromNode": "tlasset",
+      "fromSide": "bottom",
       "toNode": "bookmark-asset",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -723,7 +805,9 @@
     {
       "id": "edge-tlbinding-arrow",
       "fromNode": "tlbinding",
+      "fromSide": "bottom",
       "toNode": "arrow-binding",
+      "toSide": "top",
       "color": 6,
       "pv": {
         "edgeType": "Contains"
@@ -732,7 +816,9 @@
     {
       "id": "edge-tlstore-tlrecord",
       "fromNode": "tlstore",
+      "fromSide": "bottom",
       "toNode": "tlrecord",
+      "toSide": "right",
       "color": 3,
       "pv": {
         "edgeType": "Uses"
@@ -741,7 +827,9 @@
     {
       "id": "edge-createTLSchema-tlrecord",
       "fromNode": "createTLSchema",
+      "fromSide": "bottom",
       "toNode": "tlrecord",
+      "toSide": "left",
       "color": 3,
       "pv": {
         "edgeType": "Uses"
@@ -750,7 +838,9 @@
     {
       "id": "edge-shapes-styles",
       "fromNode": "tlshape",
+      "fromSide": "bottom",
       "toNode": "styles",
+      "toSide": "top",
       "color": 3,
       "pv": {
         "edgeType": "Uses"
@@ -759,7 +849,9 @@
     {
       "id": "edge-tlrecord-migrations",
       "fromNode": "tlrecord",
+      "fromSide": "bottom",
       "toNode": "migrations",
+      "toSide": "top",
       "color": 3,
       "pv": {
         "edgeType": "Uses"
@@ -768,7 +860,9 @@
     {
       "id": "edge-tlrecord-validation",
       "fromNode": "tlrecord",
+      "fromSide": "bottom",
       "toNode": "validation",
+      "toSide": "top",
       "color": 3,
       "pv": {
         "edgeType": "Uses"
