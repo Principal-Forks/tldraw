@@ -104,11 +104,18 @@ const rules = {
                     // 2. Find the backing TS node for the ES node, then the symbol for the imported file
                     const originalNode = parserServices.esTreeNodeToTSNodeMap.get(node);
                     const importedFileSymbol = checker.getSymbolAtLocation(originalNode.moduleSpecifier);
+                    // If we can't resolve the module (e.g., not built yet), skip this check
+                    if (!importedFileSymbol) {
+                        return;
+                    }
                     // 3. Find all the imported names from the file
-                    const importedNames = checker.getExportsOfModule(importedFileSymbol).map((imported) => ({
-                        name: imported.getEscapedName(),
-                        isType: !(imported.flags & ts.SymbolFlags.Value),
-                    }));
+                    const exports = checker.getExportsOfModule(importedFileSymbol);
+                    const importedNames = exports
+                        .filter((imported) => imported && imported.flags !== undefined)
+                        .map((imported) => ({
+                            name: imported.getEscapedName(),
+                            isType: !(imported.flags & ts.SymbolFlags.Value),
+                        }));
                     // report the error and offer a fix (listing imported names)
                     context.report({
                         messageId: 'named',
