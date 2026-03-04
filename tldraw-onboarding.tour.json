@@ -1,0 +1,369 @@
+{
+  "id": "tldraw-onboarding",
+  "title": "tldraw SDK Onboarding",
+  "description": "A guided tour of the tldraw monorepo — an infinite canvas SDK for React. Learn the architecture, core packages, shape system, and how everything fits together.",
+  "version": "1.0.0",
+  "audience": "New Contributors & Engineers",
+  "prerequisites": [
+    "Familiarity with TypeScript and React",
+    "Basic understanding of monorepo structures"
+  ],
+  "steps": [
+    {
+      "id": "step-1-overview",
+      "title": "Monorepo overview",
+      "description": "Welcome to the tldraw monorepo! The codebase is organized into three top-level directories: `packages/` contains the core SDK libraries, `apps/` houses the web applications and extensions, and `templates/` provides starter projects for different frameworks. The build system uses LazyRepo for incremental builds and Yarn Berry workspaces for dependency management.",
+      "estimatedTime": 60,
+      "focusDirectory": "",
+      "highlightLayers": [
+        {
+          "id": "core-dirs",
+          "name": "Core directories",
+          "color": "#3b82f6",
+          "items": [
+            { "path": "packages", "type": "directory" },
+            { "path": "apps", "type": "directory" },
+            { "path": "templates", "type": "directory" }
+          ],
+          "opacity": 0.6,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes",
+      "interactiveActions": [
+        {
+          "type": "explore",
+          "description": "Explore the top-level directory structure to get oriented"
+        }
+      ]
+    },
+    {
+      "id": "step-2-editor-package",
+      "title": "The editor engine",
+      "description": "The `@tldraw/editor` package is the foundational infinite canvas engine. It provides the core `Editor` class, reactive state management via signals, the shape system (ShapeUtil), tools as state machines (StateNode), and the bindings system for shape relationships. Crucially, it contains NO shapes, tools, or UI — it's a pure engine that the higher-level `tldraw` package builds upon.",
+      "estimatedTime": 120,
+      "focusDirectory": "packages/editor",
+      "highlightLayers": [
+        {
+          "id": "editor-core",
+          "name": "Editor core",
+          "color": "#8b5cf6",
+          "items": [
+            { "path": "packages/editor/src/lib/editor", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "editor-primitives",
+          "name": "Geometry primitives",
+          "color": "#06b6d4",
+          "items": [
+            { "path": "packages/editor/src/lib/primitives", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes",
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "Open the main Editor class to see the core API surface",
+          "target": "packages/editor/src/lib/editor/Editor.ts"
+        }
+      ]
+    },
+    {
+      "id": "step-3-tldraw-package",
+      "title": "The batteries-included SDK",
+      "description": "The `@tldraw/tldraw` package builds on the editor to provide a complete, ready-to-use canvas experience. It includes default shape utilities (arrow, draw, geo, text, note, image, video, and more), a full tool set (select, hand, eraser, laser, zoom), and a responsive UI system with customizable components. This is what most developers import when using tldraw.",
+      "estimatedTime": 120,
+      "focusDirectory": "packages/tldraw",
+      "highlightLayers": [
+        {
+          "id": "shapes",
+          "name": "Shape utilities",
+          "color": "#10b981",
+          "items": [
+            { "path": "packages/tldraw/src/lib/shapes", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "tools",
+          "name": "Tools",
+          "color": "#f59e0b",
+          "items": [
+            { "path": "packages/tldraw/src/lib/tools", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "ui",
+          "name": "UI components",
+          "color": "#ec4899",
+          "items": [
+            { "path": "packages/tldraw/src/lib/ui", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes",
+      "interactiveActions": [
+        {
+          "type": "hover-directory",
+          "description": "Hover over the shapes directory to see all built-in shape types",
+          "target": "packages/tldraw/src/lib/shapes"
+        }
+      ]
+    },
+    {
+      "id": "step-4-data-layer",
+      "title": "State, store, and schema",
+      "description": "Three packages form tldraw's reactive data layer. `@tldraw/state` provides the signals system (Atom, Computed) for reactive state with automatic dependency tracking. `@tldraw/store` is a reactive client-side database with IndexedDB persistence and migration support. `@tldraw/tlschema` defines the type definitions, validators, and migrations for all shapes, bindings, and records.",
+      "estimatedTime": 90,
+      "focusDirectory": "packages",
+      "highlightLayers": [
+        {
+          "id": "state-pkg",
+          "name": "Signals (state)",
+          "color": "#ef4444",
+          "items": [
+            { "path": "packages/state", "type": "directory" }
+          ],
+          "opacity": 0.6,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "store-pkg",
+          "name": "Reactive store",
+          "color": "#f97316",
+          "items": [
+            { "path": "packages/store", "type": "directory" }
+          ],
+          "opacity": 0.6,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "schema-pkg",
+          "name": "Schema & types",
+          "color": "#a855f7",
+          "items": [
+            { "path": "packages/tlschema", "type": "directory" }
+          ],
+          "opacity": 0.6,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes",
+      "interactiveActions": [
+        {
+          "type": "hover-directory",
+          "description": "Hover over the state package to see the signals implementation",
+          "target": "packages/state"
+        }
+      ]
+    },
+    {
+      "id": "step-5-sync",
+      "title": "Multiplayer sync",
+      "description": "The `@tldraw/sync` and `@tldraw/sync-core` packages provide WebSocket-based real-time collaboration. They handle conflict resolution, presence, and document synchronization. The `sync-cloudflare` template demonstrates a production-ready multiplayer setup using Cloudflare Durable Objects.",
+      "estimatedTime": 90,
+      "focusDirectory": "packages",
+      "highlightLayers": [
+        {
+          "id": "sync-pkgs",
+          "name": "Sync packages",
+          "color": "#0ea5e9",
+          "items": [
+            { "path": "packages/sync", "type": "directory" },
+            { "path": "packages/sync-core", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "sync-template",
+          "name": "Cloudflare template",
+          "color": "#f59e0b",
+          "items": [
+            { "path": "templates/sync-cloudflare", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes",
+      "interactiveActions": [
+        {
+          "type": "hover-directory",
+          "description": "Explore the sync-core package for the multiplayer protocol implementation",
+          "target": "packages/sync-core"
+        }
+      ]
+    },
+    {
+      "id": "step-6-apps",
+      "title": "Applications",
+      "description": "The `apps/` directory contains the applications built with tldraw. `examples/` is the primary SDK showcase and development playground. `dotcom/` is the tldraw.com production application with its client frontend, sync-worker backend, and supporting workers. `docs/` powers the documentation site at tldraw.dev. `vscode/` is the VS Code extension.",
+      "estimatedTime": 90,
+      "focusDirectory": "apps",
+      "highlightLayers": [
+        {
+          "id": "examples-app",
+          "name": "Examples (dev playground)",
+          "color": "#22c55e",
+          "items": [
+            { "path": "apps/examples", "type": "directory" }
+          ],
+          "opacity": 0.6,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "dotcom-app",
+          "name": "tldraw.com",
+          "color": "#3b82f6",
+          "items": [
+            { "path": "apps/dotcom", "type": "directory" }
+          ],
+          "opacity": 0.6,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "docs-app",
+          "name": "Documentation site",
+          "color": "#a855f7",
+          "items": [
+            { "path": "apps/docs", "type": "directory" }
+          ],
+          "opacity": 0.6,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes",
+      "interactiveActions": [
+        {
+          "type": "hover-directory",
+          "description": "Hover over the examples app — this is where most SDK development happens",
+          "target": "apps/examples"
+        }
+      ]
+    },
+    {
+      "id": "step-7-templates",
+      "title": "Starter templates",
+      "description": "The `templates/` directory provides ready-to-use starter projects for different frameworks and use cases. There are templates for Vite, Next.js, Vue, and more specialized setups like agent-based workflows, chat interfaces, and multiplayer sync with Cloudflare. Use `npx create-tldraw` to scaffold a new project from these templates.",
+      "estimatedTime": 60,
+      "focusDirectory": "templates",
+      "highlightLayers": [
+        {
+          "id": "framework-templates",
+          "name": "Framework starters",
+          "color": "#06b6d4",
+          "items": [
+            { "path": "templates/vite", "type": "directory" },
+            { "path": "templates/nextjs", "type": "directory" },
+            { "path": "templates/vue", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "advanced-templates",
+          "name": "Advanced templates",
+          "color": "#f97316",
+          "items": [
+            { "path": "templates/sync-cloudflare", "type": "directory" },
+            { "path": "templates/agent", "type": "directory" },
+            { "path": "templates/chat", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes",
+      "interactiveActions": [
+        {
+          "type": "explore",
+          "description": "Browse the available templates to find one matching your use case"
+        }
+      ]
+    },
+    {
+      "id": "step-8-full-picture",
+      "title": "Putting it all together",
+      "description": "You've now seen all the major areas of tldraw! The architecture flows from `@tldraw/state` (signals) → `@tldraw/store` (reactive database) → `@tldraw/editor` (canvas engine) → `@tldraw/tldraw` (full SDK). Applications in `apps/` consume the SDK, and `templates/` help new users get started. To begin developing, run `yarn dev` to start the examples app. Key commands: `yarn test run` (tests), `yarn typecheck` (type checking), `yarn lint` (linting).",
+      "estimatedTime": 60,
+      "focusDirectory": "",
+      "highlightLayers": [
+        {
+          "id": "foundation-layer",
+          "name": "Foundation (state + store + schema)",
+          "color": "#ef4444",
+          "items": [
+            { "path": "packages/state", "type": "directory" },
+            { "path": "packages/store", "type": "directory" },
+            { "path": "packages/tlschema", "type": "directory" }
+          ],
+          "opacity": 0.5,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "sdk-layer",
+          "name": "SDK (editor + tldraw)",
+          "color": "#3b82f6",
+          "items": [
+            { "path": "packages/editor", "type": "directory" },
+            { "path": "packages/tldraw", "type": "directory" }
+          ],
+          "opacity": 0.5,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "apps-layer",
+          "name": "Applications",
+          "color": "#10b981",
+          "items": [
+            { "path": "apps", "type": "directory" }
+          ],
+          "opacity": 0.5,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes",
+      "resources": [
+        {
+          "title": "tldraw documentation",
+          "url": "https://tldraw.dev",
+          "type": "documentation"
+        },
+        {
+          "title": "Contributing guide",
+          "url": "https://github.com/tldraw/tldraw/blob/main/CONTRIBUTING.md",
+          "type": "documentation"
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "explore",
+          "description": "Freely explore the codebase — you now know where everything lives!"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "author": "tldraw team",
+    "createdAt": "2026-03-04",
+    "tags": [
+      "onboarding",
+      "architecture",
+      "monorepo",
+      "react",
+      "canvas"
+    ]
+  }
+}
