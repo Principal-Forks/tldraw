@@ -2,7 +2,7 @@
   "id": "tldraw-onboarding",
   "title": "tldraw SDK Onboarding",
   "description": "A guided tour of the tldraw monorepo — an infinite canvas SDK for React. Learn the architecture, core packages, shape system, and how everything fits together.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "New Contributors & Engineers",
   "prerequisites": [
     "Familiarity with TypeScript and React",
@@ -40,7 +40,7 @@
     {
       "id": "step-2-editor-package",
       "title": "The editor engine",
-      "description": "The `@tldraw/editor` package is the foundational infinite canvas engine. It provides the core `Editor` class, reactive state management via signals, the shape system (ShapeUtil), tools as state machines (StateNode), and the bindings system for shape relationships. Crucially, it contains NO shapes, tools, or UI — it's a pure engine that the higher-level `tldraw` package builds upon.",
+      "description": "The `@tldraw/editor` package is the foundational infinite canvas engine. It provides the core `Editor` class, reactive state management via signals, the shape system (ShapeUtil), tools as state machines (StateNode), and the bindings system for shape relationships. Crucially, it contains NO shapes, tools, or UI — it's a pure engine that the higher-level `tldraw` package builds upon. The companion `@tldraw/driver` package provides an imperative API for driving the editor programmatically.",
       "estimatedTime": 120,
       "focusDirectory": "packages/editor",
       "highlightLayers": [
@@ -60,6 +60,16 @@
           "color": "#06b6d4",
           "items": [
             { "path": "packages/editor/src/lib/primitives", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "driver-pkg",
+          "name": "Driver (imperative API)",
+          "color": "#d946ef",
+          "items": [
+            { "path": "packages/driver", "type": "directory" }
           ],
           "opacity": 0.7,
           "renderStrategy": "border"
@@ -209,7 +219,7 @@
     {
       "id": "step-6-apps",
       "title": "Applications",
-      "description": "The `apps/` directory contains the applications built with tldraw. `examples/` is the primary SDK showcase and development playground. `dotcom/` is the tldraw.com production application with its client frontend, sync-worker backend, and supporting workers. `docs/` powers the documentation site at tldraw.dev. `vscode/` is the VS Code extension.",
+      "description": "The `apps/` directory contains the applications built with tldraw. `examples/` is the primary SDK showcase and development playground. `dotcom/` is the tldraw.com production application with its client frontend, sync-worker backend, and supporting workers. `docs/` powers the documentation site at tldraw.dev. `vscode/` is the VS Code extension. `mcp-app/` provides Model Context Protocol integration for AI-powered workflows.",
       "estimatedTime": 90,
       "focusDirectory": "apps",
       "highlightLayers": [
@@ -242,6 +252,16 @@
           ],
           "opacity": 0.6,
           "renderStrategy": "border"
+        },
+        {
+          "id": "mcp-app",
+          "name": "MCP integration",
+          "color": "#f97316",
+          "items": [
+            { "path": "apps/mcp-app", "type": "directory" }
+          ],
+          "opacity": 0.6,
+          "renderStrategy": "border"
         }
       ],
       "colorMode": "fileTypes",
@@ -256,7 +276,7 @@
     {
       "id": "step-7-templates",
       "title": "Starter templates",
-      "description": "The `templates/` directory provides ready-to-use starter projects for different frameworks and use cases. There are templates for Vite, Next.js, Vue, and more specialized setups like agent-based workflows, chat interfaces, and multiplayer sync with Cloudflare. Use `npx create-tldraw` to scaffold a new project from these templates.",
+      "description": "The `templates/` directory provides ready-to-use starter projects for different frameworks and use cases. There are templates for Vite, Next.js, Vue, and more specialized setups like agent-based workflows, chat interfaces, multiplayer sync with Cloudflare, shader experiments, image pipelines, and branching chat workflows. Use `npx create-tldraw` to scaffold a new project from these templates.",
       "estimatedTime": 60,
       "focusDirectory": "templates",
       "highlightLayers": [
@@ -279,7 +299,10 @@
           "items": [
             { "path": "templates/sync-cloudflare", "type": "directory" },
             { "path": "templates/agent", "type": "directory" },
-            { "path": "templates/chat", "type": "directory" }
+            { "path": "templates/chat", "type": "directory" },
+            { "path": "templates/workflow", "type": "directory" },
+            { "path": "templates/image-pipeline", "type": "directory" },
+            { "path": "templates/shader", "type": "directory" }
           ],
           "opacity": 0.7,
           "renderStrategy": "border"
@@ -358,6 +381,7 @@
   "metadata": {
     "author": "tldraw team",
     "createdAt": "2026-03-04",
+    "updatedAt": "2026-03-13",
     "tags": [
       "onboarding",
       "architecture",
