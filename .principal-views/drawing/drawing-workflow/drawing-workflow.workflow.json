@@ -1,0 +1,47 @@
+{
+  "name": "Drawing gesture",
+  "version": "1.0.0",
+  "description": "Freehand drawing gesture for draw and highlight shapes",
+  "canvas": ".principal-views/drawing/drawing.otel.canvas",
+  "spanPattern": "editor.drawing",
+  "scenarios": [
+    {
+      "id": "success-simple",
+      "priority": 1,
+      "description": "Drawing completed without mode switches or overflow",
+      "template": {
+        "summary": "[SUCCESS] Drew {{shape.type}} shape with {{points.total}} points",
+        "events": {
+          "drawing.started": "Started {{shape.type}} {{shape.id}} at ({{origin.x}}, {{origin.y}}) in {{segment.mode}} mode using {{input.type}}, pressure: {{pressure}}",
+          "drawing.updated": "Shape {{shape.id}}: {{points.current}} points, {{segment.count}} segments, {{line.length}}px in {{segment.mode}} mode",
+          "drawing.complete": "Completed {{shape.type}} {{shape.id}} - {{points.total}} points, {{segment.count}} segments, {{line.length}}px, closed: {{is.closed}}, took {{duration.ms}}ms"
+        }
+      }
+    },
+    {
+      "id": "overflow",
+      "priority": 2,
+      "description": "Drawing exceeded max points and split into new shape",
+      "template": {
+        "summary": "[INFO] Drawing split at {{points.at.overflow}} points",
+        "events": {
+          "drawing.started": "Started {{shape.type}} {{shape.id}} using {{input.type}}, pressure: {{pressure}}",
+          "drawing.overflow": "Shape {{completed.shape.id}} hit {{points.at.overflow}} points, continuing as {{new.shape.id}}",
+          "drawing.complete": "Completed {{shape.type}} {{shape.id}} - {{points.total}} points, {{segment.count}} segments, {{line.length}}px, closed: {{is.closed}}, took {{duration.ms}}ms"
+        }
+      }
+    },
+    {
+      "id": "cancelled",
+      "priority": 4,
+      "description": "Drawing was cancelled or interrupted before completion",
+      "template": {
+        "summary": "[CANCELLED] Drawing cancelled: {{reason}}",
+        "events": {
+          "drawing.started": "Started {{shape.type}} {{shape.id}} at ({{origin.x}}, {{origin.y}}) in {{segment.mode}} mode using {{input.type}}, pressure: {{pressure}}",
+          "drawing.cancelled": "Cancelled {{shape.id}} after {{points.drawn}} points - reason: {{reason}}"
+        }
+      }
+    }
+  ]
+}

@@ -41,6 +41,11 @@ nodeComponents:
     color: 6
     icon: "Settings"
 
+  event:
+    description: "OTEL telemetry event"
+    color: 3
+    icon: "Activity"
+
 edgeComponents:
   Depends:
     description: "Package dependency"
@@ -51,3 +56,28 @@ edgeComponents:
     description: "Application uses package"
     style: "dashed"
     label: "uses"
+
+  flow:
+    description: "Event sequence flow"
+    style: "solid"
+    label: "then"
+
+  branch:
+    description: "Alternative event path"
+    style: "dashed"
+    label: "or"
+
+  data-flow:
+    description: "Data flow between resources"
+    style: "solid"
+    label: "emits"
+
+  parent-child:
+    description: "Span parent-child relationship"
+    style: "solid"
+    label: "contains"
+
+  composition:
+    description: "Scope embedding relationship"
+    style: "dashed"
+    label: "embedded in"
