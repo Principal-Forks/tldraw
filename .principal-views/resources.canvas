@@ -1,0 +1,478 @@
+{
+  "pv": {
+    "name": "tldraw Service Resources",
+    "version": "1.0.0",
+    "markdown": ".principal-views/resources.md",
+    "nodeTypes": {
+      "resource": {
+        "label": "Service Resource",
+        "description": "A deployable service that emits telemetry",
+        "color": "#4A90E2"
+      },
+      "scope": {
+        "label": "Instrumentation Scope",
+        "description": "An instrumentation library for a service",
+        "color": "#7ED321"
+      },
+      "category": {
+        "label": "Category",
+        "description": "A grouping of related services",
+        "color": "#9B9B9B"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "cat-backend",
+      "type": "group",
+      "x": 0,
+      "y": 0,
+      "width": 900,
+      "height": 600,
+      "label": "Backend Services (Cloudflare Workers)"
+    },
+    {
+      "id": "cat-frontend",
+      "type": "group",
+      "x": 950,
+      "y": 0,
+      "width": 634,
+      "height": 350,
+      "label": "Frontend Services"
+    },
+    {
+      "id": "cat-other",
+      "type": "group",
+      "x": 950,
+      "y": 400,
+      "width": 633,
+      "height": 350,
+      "label": "Other Services"
+    },
+    {
+      "id": "res-multiplayer",
+      "type": "text",
+      "x": 50,
+      "y": 50,
+      "width": 250,
+      "height": 120,
+      "color": "#4A90E2",
+      "text": "# tldraw-multiplayer\n\n**service.name:** `tldraw-multiplayer`\n**namespace:** `tldraw.backend`\n\nReal-time sync & collaboration server",
+      "pv": {
+        "nodeType": "resource",
+        "otel": {
+          "kind": "service",
+          "category": "multiplayer"
+        },
+        "resourceMatch": {
+          "service.name": "tldraw-multiplayer",
+          "service.namespace": "tldraw.backend"
+        }
+      }
+    },
+    {
+      "id": "scope-multiplayer",
+      "type": "text",
+      "x": 50,
+      "y": 200,
+      "width": 250,
+      "height": 80,
+      "color": "#7ED321",
+      "text": "# @tldraw/sync-worker\n\nSync worker instrumentation",
+      "pv": {
+        "nodeType": "scope",
+        "otel": {
+          "scope": "@tldraw/sync-worker"
+        }
+      }
+    },
+    {
+      "id": "res-bemo",
+      "type": "text",
+      "x": 325,
+      "y": 50,
+      "width": 250,
+      "height": 120,
+      "color": "#4A90E2",
+      "text": "# tldraw-bemo\n\n**service.name:** `tldraw-bemo`\n**namespace:** `tldraw.backend`\n\nMerge server for conflict resolution",
+      "pv": {
+        "nodeType": "resource",
+        "otel": {
+          "kind": "service",
+          "category": "multiplayer"
+        },
+        "resourceMatch": {
+          "service.name": "tldraw-bemo",
+          "service.namespace": "tldraw.backend"
+        }
+      }
+    },
+    {
+      "id": "scope-bemo",
+      "type": "text",
+      "x": 325,
+      "y": 200,
+      "width": 250,
+      "height": 80,
+      "color": "#7ED321",
+      "text": "# @tldraw/bemo-worker\n\nBemo worker instrumentation",
+      "pv": {
+        "nodeType": "scope",
+        "otel": {
+          "scope": "@tldraw/bemo-worker"
+        }
+      }
+    },
+    {
+      "id": "res-assets",
+      "type": "text",
+      "x": 600,
+      "y": 50,
+      "width": 250,
+      "height": 120,
+      "color": "#4A90E2",
+      "text": "# tldraw-assets\n\n**service.name:** `tldraw-assets`\n**namespace:** `tldraw.backend`\n\nAsset upload handling (R2 storage)",
+      "pv": {
+        "nodeType": "resource",
+        "otel": {
+          "kind": "service",
+          "category": "storage"
+        },
+        "resourceMatch": {
+          "service.name": "tldraw-assets",
+          "service.namespace": "tldraw.backend"
+        }
+      }
+    },
+    {
+      "id": "scope-assets",
+      "type": "text",
+      "x": 600,
+      "y": 200,
+      "width": 250,
+      "height": 80,
+      "color": "#7ED321",
+      "text": "# @tldraw/asset-upload-worker\n\nAsset worker instrumentation",
+      "pv": {
+        "nodeType": "scope",
+        "otel": {
+          "scope": "@tldraw/asset-upload-worker"
+        }
+      }
+    },
+    {
+      "id": "res-images",
+      "type": "text",
+      "x": 50,
+      "y": 320,
+      "width": 250,
+      "height": 120,
+      "color": "#4A90E2",
+      "text": "# tldraw-images\n\n**service.name:** `tldraw-images`\n**namespace:** `tldraw.backend`\n\nImage optimization & resizing",
+      "pv": {
+        "nodeType": "resource",
+        "otel": {
+          "kind": "service",
+          "category": "storage"
+        },
+        "resourceMatch": {
+          "service.name": "tldraw-images",
+          "service.namespace": "tldraw.backend"
+        }
+      }
+    },
+    {
+      "id": "scope-images",
+      "type": "text",
+      "x": 50,
+      "y": 470,
+      "width": 250,
+      "height": 80,
+      "color": "#7ED321",
+      "text": "# @tldraw/image-resize-worker\n\nImage worker instrumentation",
+      "pv": {
+        "nodeType": "scope",
+        "otel": {
+          "scope": "@tldraw/image-resize-worker"
+        }
+      }
+    },
+    {
+      "id": "res-consent",
+      "type": "text",
+      "x": 325,
+      "y": 320,
+      "width": 250,
+      "height": 120,
+      "color": "#4A90E2",
+      "text": "# tldraw-consent\n\n**service.name:** `tldraw-consent`\n**namespace:** `tldraw.backend`\n\nAnalytics consent management",
+      "pv": {
+        "nodeType": "resource",
+        "otel": {
+          "kind": "service",
+          "category": "analytics"
+        },
+        "resourceMatch": {
+          "service.name": "tldraw-consent",
+          "service.namespace": "tldraw.backend"
+        }
+      }
+    },
+    {
+      "id": "scope-consent",
+      "type": "text",
+      "x": 325,
+      "y": 470,
+      "width": 250,
+      "height": 80,
+      "color": "#7ED321",
+      "text": "# @tldraw/analytics-worker\n\nConsent worker instrumentation",
+      "pv": {
+        "nodeType": "scope",
+        "otel": {
+          "scope": "@tldraw/analytics-worker"
+        }
+      }
+    },
+    {
+      "id": "res-web",
+      "type": "text",
+      "x": 1000,
+      "y": 50,
+      "width": 250,
+      "height": 120,
+      "color": "#4A90E2",
+      "text": "# tldraw-web\n\n**service.name:** `tldraw-web`\n**namespace:** `tldraw.frontend`\n\ntldraw.com web application",
+      "pv": {
+        "nodeType": "resource",
+        "otel": {
+          "kind": "service",
+          "category": "frontend"
+        },
+        "resourceMatch": {
+          "service.name": "tldraw-web",
+          "service.namespace": "tldraw.frontend"
+        }
+      }
+    },
+    {
+      "id": "scope-web",
+      "type": "text",
+      "x": 1000,
+      "y": 200,
+      "width": 250,
+      "height": 80,
+      "color": "#7ED321",
+      "text": "# @tldraw/dotcom-client\n\nDotcom client instrumentation",
+      "pv": {
+        "nodeType": "scope",
+        "otel": {
+          "scope": "@tldraw/dotcom-client"
+        }
+      }
+    },
+    {
+      "id": "res-docs",
+      "type": "text",
+      "x": 1275,
+      "y": 50,
+      "width": 250,
+      "height": 120,
+      "color": "#F5A623",
+      "text": "# tldraw-docs\n\n**service.name:** `tldraw-docs`\n**namespace:** `tldraw.frontend`\n\ntldraw.dev documentation site",
+      "pv": {
+        "nodeType": "resource",
+        "otel": {
+          "kind": "service",
+          "category": "frontend"
+        },
+        "resourceMatch": {
+          "service.name": "tldraw-docs",
+          "service.namespace": "tldraw.frontend"
+        }
+      }
+    },
+    {
+      "id": "scope-docs",
+      "type": "text",
+      "x": 1275,
+      "y": 200,
+      "width": 250,
+      "height": 80,
+      "color": "#7ED321",
+      "text": "# @tldraw/docs\n\nDocs site instrumentation",
+      "pv": {
+        "nodeType": "scope",
+        "otel": {
+          "scope": "@tldraw/docs"
+        }
+      }
+    },
+    {
+      "id": "res-vscode",
+      "type": "text",
+      "x": 1000,
+      "y": 450,
+      "width": 250,
+      "height": 120,
+      "color": "#BD10E0",
+      "text": "# tldraw-vscode\n\n**service.name:** `tldraw-vscode`\n**namespace:** `tldraw.ide`\n\nVS Code extension",
+      "pv": {
+        "nodeType": "resource",
+        "otel": {
+          "kind": "service",
+          "category": "ide"
+        },
+        "resourceMatch": {
+          "service.name": "tldraw-vscode",
+          "service.namespace": "tldraw.ide"
+        }
+      }
+    },
+    {
+      "id": "scope-vscode",
+      "type": "text",
+      "x": 1000,
+      "y": 600,
+      "width": 250,
+      "height": 80,
+      "color": "#7ED321",
+      "text": "# @tldraw/vscode-extension\n\nVS Code instrumentation",
+      "pv": {
+        "nodeType": "scope",
+        "otel": {
+          "scope": "@tldraw/vscode-extension"
+        }
+      }
+    },
+    {
+      "id": "res-zero",
+      "type": "text",
+      "x": 1275,
+      "y": 450,
+      "width": 250,
+      "height": 120,
+      "color": "#50E3C2",
+      "text": "# tldraw-zero-cache\n\n**service.name:** `tldraw-zero-cache`\n**namespace:** `tldraw.backend`\n\nZero database cache layer",
+      "pv": {
+        "nodeType": "resource",
+        "otel": {
+          "kind": "service",
+          "category": "database"
+        },
+        "resourceMatch": {
+          "service.name": "tldraw-zero-cache",
+          "service.namespace": "tldraw.backend"
+        }
+      }
+    },
+    {
+      "id": "scope-zero",
+      "type": "text",
+      "x": 1275,
+      "y": 600,
+      "width": 250,
+      "height": 80,
+      "color": "#7ED321",
+      "text": "# @tldraw/zero-cache\n\nZero cache instrumentation",
+      "pv": {
+        "nodeType": "scope",
+        "otel": {
+          "scope": "@tldraw/zero-cache"
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-multiplayer-scope",
+      "fromNode": "res-multiplayer",
+      "fromSide": "bottom",
+      "toNode": "scope-multiplayer",
+      "toSide": "top",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e-bemo-scope",
+      "fromNode": "res-bemo",
+      "fromSide": "bottom",
+      "toNode": "scope-bemo",
+      "toSide": "top",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e-assets-scope",
+      "fromNode": "res-assets",
+      "fromSide": "bottom",
+      "toNode": "scope-assets",
+      "toSide": "top",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e-images-scope",
+      "fromNode": "res-images",
+      "fromSide": "bottom",
+      "toNode": "scope-images",
+      "toSide": "top",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e-consent-scope",
+      "fromNode": "res-consent",
+      "fromSide": "bottom",
+      "toNode": "scope-consent",
+      "toSide": "top",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e-web-scope",
+      "fromNode": "res-web",
+      "fromSide": "bottom",
+      "toNode": "scope-web",
+      "toSide": "top",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e-docs-scope",
+      "fromNode": "res-docs",
+      "fromSide": "bottom",
+      "toNode": "scope-docs",
+      "toSide": "top",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e-vscode-scope",
+      "fromNode": "res-vscode",
+      "fromSide": "bottom",
+      "toNode": "scope-vscode",
+      "toSide": "top",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e-zero-scope",
+      "fromNode": "res-zero",
+      "fromSide": "bottom",
+      "toNode": "scope-zero",
+      "toSide": "top",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    }
+  ]
+}

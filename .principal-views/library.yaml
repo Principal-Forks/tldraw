@@ -1,6 +1,25 @@
 version: "1.0.0"
 name: "tldraw Component Library"
 
+# OTEL instrumentation scopes owned by this codebase
+owned-scopes:
+  # Core SDK libraries (embedded in apps)
+  - "@tldraw/editor"
+  - "@tldraw/tldraw"
+  - "@tldraw/store"
+  - "@tldraw/state"
+  - "@tldraw/sync"
+  # Application scopes (deployed services)
+  - "@tldraw/sync-worker"
+  - "@tldraw/bemo-worker"
+  - "@tldraw/asset-upload-worker"
+  - "@tldraw/image-resize-worker"
+  - "@tldraw/analytics-worker"
+  - "@tldraw/dotcom-client"
+  - "@tldraw/docs"
+  - "@tldraw/vscode-extension"
+  - "@tldraw/zero-cache"
+
 nodeComponents:
   CorePackage:
     description: "Core SDK package"

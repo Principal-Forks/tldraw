@@ -1,0 +1,645 @@
+{
+  "pv": {
+    "name": "tldraw Span Conventions",
+    "version": "1.0.0",
+    "markdown": ".principal-views/architecture.spans.md",
+    "nodeTypes": {
+      "span-convention": {
+        "label": "Span Convention",
+        "description": "A span naming pattern",
+        "color": "#3B82F6"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "layer-entry",
+      "type": "group",
+      "x": 0,
+      "y": 0,
+      "width": 1400,
+      "height": 180,
+      "label": "Entry Layer (SERVER/CONSUMER) - request/connection entry points"
+    },
+    {
+      "id": "layer-domain",
+      "type": "group",
+      "x": 0,
+      "y": 220,
+      "width": 1400,
+      "height": 380,
+      "label": "Domain Layer (INTERNAL) - business logic & SDK operations"
+    },
+    {
+      "id": "layer-infra",
+      "type": "group",
+      "x": 0,
+      "y": 640,
+      "width": 1400,
+      "height": 180,
+      "label": "Infrastructure Layer (CLIENT) - external calls & storage"
+    },
+    {
+      "id": "span-http-request",
+      "type": "text",
+      "x": 20,
+      "y": 50,
+      "width": 200,
+      "height": 100,
+      "color": "#EF4444",
+      "text": "# http.request\n\nHTTP request handling\n\n**Kind:** SERVER",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "http.request",
+          "spanKind": "SERVER"
+        }
+      }
+    },
+    {
+      "id": "span-websocket-connect",
+      "type": "text",
+      "x": 240,
+      "y": 50,
+      "width": 200,
+      "height": 100,
+      "color": "#EF4444",
+      "text": "# websocket.connect\n\nWebSocket connection\n\n**Kind:** SERVER",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "websocket.connect",
+          "spanKind": "SERVER"
+        }
+      }
+    },
+    {
+      "id": "span-websocket-message",
+      "type": "text",
+      "x": 460,
+      "y": 50,
+      "width": 200,
+      "height": 100,
+      "color": "#EF4444",
+      "text": "# websocket.message\n\nWebSocket message\n\n**Kind:** SERVER",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "websocket.message",
+          "spanKind": "SERVER"
+        }
+      }
+    },
+    {
+      "id": "span-durable-object-fetch",
+      "type": "text",
+      "x": 680,
+      "y": 50,
+      "width": 200,
+      "height": 100,
+      "color": "#EF4444",
+      "text": "# durable-object.fetch\n\nDurable Object request\n\n**Kind:** SERVER",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "durable-object.fetch",
+          "spanKind": "SERVER"
+        }
+      }
+    },
+    {
+      "id": "span-app-route",
+      "type": "text",
+      "x": 900,
+      "y": 50,
+      "width": 200,
+      "height": 100,
+      "color": "#EF4444",
+      "text": "# app.route.*\n\nClient-side navigation\n\n**Kind:** INTERNAL",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "app.route.*",
+          "spanKind": "INTERNAL"
+        }
+      }
+    },
+    {
+      "id": "span-extension-activate",
+      "type": "text",
+      "x": 1120,
+      "y": 50,
+      "width": 200,
+      "height": 100,
+      "color": "#EF4444",
+      "text": "# extension.activate\n\nVS Code activation\n\n**Kind:** INTERNAL",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "extension.activate",
+          "spanKind": "INTERNAL"
+        }
+      }
+    },
+    {
+      "id": "span-editor-tool",
+      "type": "text",
+      "x": 20,
+      "y": 270,
+      "width": 200,
+      "height": 100,
+      "color": "#3B82F6",
+      "text": "# editor.tool.*\n\nTool state changes\n\n**Kind:** INTERNAL",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "editor.tool.*",
+          "spanKind": "INTERNAL"
+        }
+      }
+    },
+    {
+      "id": "span-editor-shape",
+      "type": "text",
+      "x": 240,
+      "y": 270,
+      "width": 200,
+      "height": 100,
+      "color": "#3B82F6",
+      "text": "# editor.shape.*\n\nShape CRUD operations\n\n**Kind:** INTERNAL",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "editor.shape.*",
+          "spanKind": "INTERNAL"
+        }
+      }
+    },
+    {
+      "id": "span-editor-canvas",
+      "type": "text",
+      "x": 460,
+      "y": 270,
+      "width": 200,
+      "height": 100,
+      "color": "#3B82F6",
+      "text": "# editor.canvas.*\n\nCanvas operations\n\n**Kind:** INTERNAL",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "editor.canvas.*",
+          "spanKind": "INTERNAL"
+        }
+      }
+    },
+    {
+      "id": "span-tldraw-ui",
+      "type": "text",
+      "x": 680,
+      "y": 270,
+      "width": 200,
+      "height": 100,
+      "color": "#3B82F6",
+      "text": "# tldraw.ui.*\n\nUI interactions\n\n**Kind:** INTERNAL",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "tldraw.ui.*",
+          "spanKind": "INTERNAL"
+        }
+      }
+    },
+    {
+      "id": "span-tldraw-action",
+      "type": "text",
+      "x": 900,
+      "y": 270,
+      "width": 200,
+      "height": 100,
+      "color": "#3B82F6",
+      "text": "# tldraw.action.*\n\nUser actions (undo, etc)\n\n**Kind:** INTERNAL",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "tldraw.action.*",
+          "spanKind": "INTERNAL"
+        }
+      }
+    },
+    {
+      "id": "span-tldraw-export",
+      "type": "text",
+      "x": 1120,
+      "y": 270,
+      "width": 200,
+      "height": 100,
+      "color": "#3B82F6",
+      "text": "# tldraw.export.*\n\nExport operations\n\n**Kind:** INTERNAL",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "tldraw.export.*",
+          "spanKind": "INTERNAL"
+        }
+      }
+    },
+    {
+      "id": "span-store-transaction",
+      "type": "text",
+      "x": 20,
+      "y": 390,
+      "width": 200,
+      "height": 100,
+      "color": "#8B5CF6",
+      "text": "# store.transaction.*\n\nStore transactions\n\n**Kind:** INTERNAL",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "store.transaction.*",
+          "spanKind": "INTERNAL"
+        }
+      }
+    },
+    {
+      "id": "span-sync-client",
+      "type": "text",
+      "x": 240,
+      "y": 390,
+      "width": 200,
+      "height": 100,
+      "color": "#8B5CF6",
+      "text": "# sync.client.*\n\nSync client operations\n\n**Kind:** INTERNAL",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "sync.client.*",
+          "spanKind": "INTERNAL"
+        }
+      }
+    },
+    {
+      "id": "span-sync-server",
+      "type": "text",
+      "x": 460,
+      "y": 390,
+      "width": 200,
+      "height": 100,
+      "color": "#8B5CF6",
+      "text": "# sync.server.*\n\nSync server operations\n\n**Kind:** INTERNAL",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "sync.server.*",
+          "spanKind": "INTERNAL"
+        }
+      }
+    },
+    {
+      "id": "span-sync-presence",
+      "type": "text",
+      "x": 680,
+      "y": 390,
+      "width": 200,
+      "height": 100,
+      "color": "#8B5CF6",
+      "text": "# sync.presence.*\n\nPresence updates\n\n**Kind:** INTERNAL",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "sync.presence.*",
+          "spanKind": "INTERNAL"
+        }
+      }
+    },
+    {
+      "id": "span-merge",
+      "type": "text",
+      "x": 900,
+      "y": 390,
+      "width": 200,
+      "height": 100,
+      "color": "#8B5CF6",
+      "text": "# merge.*\n\nMerge operations\n\n**Kind:** INTERNAL",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "merge.*",
+          "spanKind": "INTERNAL"
+        }
+      }
+    },
+    {
+      "id": "span-upload",
+      "type": "text",
+      "x": 1120,
+      "y": 390,
+      "width": 200,
+      "height": 100,
+      "color": "#8B5CF6",
+      "text": "# upload.*\n\nUpload processing\n\n**Kind:** INTERNAL",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "upload.*",
+          "spanKind": "INTERNAL"
+        }
+      }
+    },
+    {
+      "id": "span-store-persist",
+      "type": "text",
+      "x": 20,
+      "y": 690,
+      "width": 200,
+      "height": 100,
+      "color": "#10B981",
+      "text": "# store.persist.*\n\nIndexedDB persistence\n\n**Kind:** CLIENT",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "store.persist.*",
+          "spanKind": "CLIENT"
+        }
+      }
+    },
+    {
+      "id": "span-sync-socket",
+      "type": "text",
+      "x": 240,
+      "y": 690,
+      "width": 200,
+      "height": 100,
+      "color": "#10B981",
+      "text": "# sync.socket.*\n\nWebSocket I/O\n\n**Kind:** CLIENT",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "sync.socket.*",
+          "spanKind": "CLIENT"
+        }
+      }
+    },
+    {
+      "id": "span-r2",
+      "type": "text",
+      "x": 460,
+      "y": 690,
+      "width": 200,
+      "height": 100,
+      "color": "#10B981",
+      "text": "# r2.*\n\nR2 storage operations\n\n**Kind:** CLIENT",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "r2.*",
+          "spanKind": "CLIENT"
+        }
+      }
+    },
+    {
+      "id": "span-db",
+      "type": "text",
+      "x": 680,
+      "y": 690,
+      "width": 200,
+      "height": 100,
+      "color": "#10B981",
+      "text": "# db.*\n\nDatabase queries\n\n**Kind:** CLIENT",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "db.*",
+          "spanKind": "CLIENT"
+        }
+      }
+    },
+    {
+      "id": "span-cache",
+      "type": "text",
+      "x": 900,
+      "y": 690,
+      "width": 200,
+      "height": 100,
+      "color": "#10B981",
+      "text": "# cache.*\n\nCache operations\n\n**Kind:** CLIENT",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "cache.*",
+          "spanKind": "CLIENT"
+        }
+      }
+    },
+    {
+      "id": "span-image",
+      "type": "text",
+      "x": 1120,
+      "y": 690,
+      "width": 200,
+      "height": 100,
+      "color": "#10B981",
+      "text": "# image.*\n\nImage fetch/resize\n\n**Kind:** CLIENT",
+      "pv": {
+        "nodeType": "span-convention",
+        "otel": {
+          "spanPattern": "image.*",
+          "spanKind": "CLIENT"
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-http-to-sync-server",
+      "fromNode": "span-http-request",
+      "fromSide": "bottom",
+      "toNode": "span-sync-server",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-http-to-upload",
+      "fromNode": "span-http-request",
+      "fromSide": "bottom",
+      "toNode": "span-upload",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-ws-connect-to-sync-server",
+      "fromNode": "span-websocket-connect",
+      "fromSide": "bottom",
+      "toNode": "span-sync-server",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-ws-message-to-sync-server",
+      "fromNode": "span-websocket-message",
+      "fromSide": "bottom",
+      "toNode": "span-sync-server",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-ws-message-to-merge",
+      "fromNode": "span-websocket-message",
+      "fromSide": "bottom",
+      "toNode": "span-merge",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-do-to-sync-server",
+      "fromNode": "span-durable-object-fetch",
+      "fromSide": "bottom",
+      "toNode": "span-sync-server",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-do-to-presence",
+      "fromNode": "span-durable-object-fetch",
+      "fromSide": "bottom",
+      "toNode": "span-sync-presence",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-route-to-editor-tool",
+      "fromNode": "span-app-route",
+      "fromSide": "bottom",
+      "toNode": "span-editor-tool",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-route-to-sync-client",
+      "fromNode": "span-app-route",
+      "fromSide": "bottom",
+      "toNode": "span-sync-client",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-ext-to-editor-tool",
+      "fromNode": "span-extension-activate",
+      "fromSide": "bottom",
+      "toNode": "span-editor-tool",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-ui-to-action",
+      "fromNode": "span-tldraw-ui",
+      "fromSide": "right",
+      "toNode": "span-tldraw-action",
+      "toSide": "left",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-action-to-shape",
+      "fromNode": "span-tldraw-action",
+      "fromSide": "left",
+      "toNode": "span-editor-shape",
+      "toSide": "right",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-tool-to-shape",
+      "fromNode": "span-editor-tool",
+      "fromSide": "right",
+      "toNode": "span-editor-shape",
+      "toSide": "left",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-shape-to-canvas",
+      "fromNode": "span-editor-shape",
+      "fromSide": "right",
+      "toNode": "span-editor-canvas",
+      "toSide": "left",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-shape-to-store",
+      "fromNode": "span-editor-shape",
+      "fromSide": "bottom",
+      "toNode": "span-store-transaction",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-export-to-canvas",
+      "fromNode": "span-tldraw-export",
+      "fromSide": "left",
+      "toNode": "span-editor-canvas",
+      "toSide": "right",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-store-to-persist",
+      "fromNode": "span-store-transaction",
+      "fromSide": "bottom",
+      "toNode": "span-store-persist",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-store-to-sync-client",
+      "fromNode": "span-store-transaction",
+      "fromSide": "right",
+      "toNode": "span-sync-client",
+      "toSide": "left",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-sync-client-to-socket",
+      "fromNode": "span-sync-client",
+      "fromSide": "bottom",
+      "toNode": "span-sync-socket",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-sync-server-to-db",
+      "fromNode": "span-sync-server",
+      "fromSide": "bottom",
+      "toNode": "span-db",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-sync-server-to-cache",
+      "fromNode": "span-sync-server",
+      "fromSide": "bottom",
+      "toNode": "span-cache",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-presence-to-db",
+      "fromNode": "span-sync-presence",
+      "fromSide": "bottom",
+      "toNode": "span-db",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-upload-to-r2",
+      "fromNode": "span-upload",
+      "fromSide": "bottom",
+      "toNode": "span-r2",
+      "toSide": "top",
+      "pv": { "edgeType": "parent-child" }
+    },
+    {
+      "id": "e-image-to-r2",
+      "fromNode": "span-image",
+      "fromSide": "left",
+      "toNode": "span-r2",
+      "toSide": "right",
+      "pv": { "edgeType": "parent-child" }
+    }
+  ]
+}
