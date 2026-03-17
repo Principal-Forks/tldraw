@@ -1,0 +1,49 @@
+{
+  "name": "Arrow creation",
+  "version": "1.0.0",
+  "description": "Creating arrows with optional shape bindings",
+  "canvas": ".principal-views/arrow/arrow.otel.canvas",
+  "spanPattern": "editor.arrow",
+  "scenarios": [
+    {
+      "id": "unbound",
+      "priority": 1,
+      "description": "Arrow created without binding to any shape",
+      "template": {
+        "summary": "[SUCCESS] Created unbound {{arrow.kind}} arrow",
+        "events": {
+          "arrow.pointing.started": "Arrow tool pointer down at ({{origin.x}}, {{origin.y}}), kind: {{arrow.kind}}, precise: {{is.precise}}",
+          "arrow.created": "Created {{arrow.kind}} arrow {{shape.id}}",
+          "arrow.freeform.placed": "Freeform arrow {{shape.id}} from ({{start.x}}, {{start.y}}) to ({{end.x}}, {{end.y}})",
+          "arrow.completed": "Arrow {{shape.id}} completed - {{length.px}}px, {{bindings.count}} bindings, took {{duration.ms}}ms"
+        }
+      }
+    },
+    {
+      "id": "bound",
+      "priority": 2,
+      "description": "Arrow bound to at least one shape",
+      "template": {
+        "summary": "[SUCCESS] Created arrow bound to {{bindings.count}} shape(s)",
+        "events": {
+          "arrow.pointing.started": "Arrow tool pointer down at ({{origin.x}}, {{origin.y}}), target: {{target.shape.id}}, kind: {{arrow.kind}}",
+          "arrow.created": "Created {{arrow.kind}} arrow {{shape.id}}",
+          "arrow.binding.created": "Binding {{binding.id}}: bound {{terminal}} of {{arrow.id}} to {{target.type}} {{target.id}} via {{snap.type}}, precise: {{is.precise}}",
+          "arrow.completed": "Arrow {{shape.id}} completed - {{length.px}}px, {{bindings.count}} bindings, took {{duration.ms}}ms"
+        }
+      }
+    },
+    {
+      "id": "cancelled",
+      "priority": 3,
+      "description": "Arrow creation was cancelled",
+      "template": {
+        "summary": "[CANCELLED] Arrow cancelled: {{reason}}",
+        "events": {
+          "arrow.pointing.started": "Arrow tool pointer down at ({{origin.x}}, {{origin.y}}), kind: {{arrow.kind}}",
+          "arrow.cancelled": "Arrow cancelled: {{reason}}, shape rolled back: {{shape.rolled.back}}"
+        }
+      }
+    }
+  ]
+}

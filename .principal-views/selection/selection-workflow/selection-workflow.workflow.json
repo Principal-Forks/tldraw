@@ -1,0 +1,48 @@
+{
+  "name": "Selection gesture",
+  "version": "1.0.0",
+  "description": "Shape selection via click or brush marquee",
+  "canvas": ".principal-views/selection/selection.otel.canvas",
+  "spanPattern": "editor.selection",
+  "scenarios": [
+    {
+      "id": "click-select",
+      "priority": 1,
+      "description": "Single click to select a shape",
+      "template": {
+        "summary": "[SUCCESS] Selected {{selection.count.after}} shape(s) via {{selection.method}}",
+        "events": {
+          "selection.started": "Pointer down on {{target.type}} {{target.id}}, shift: {{modifier.shift}}, ctrl: {{modifier.ctrl}}, selection before: {{selection.count.before}}",
+          "selection.click.applied": "Click applied to {{shape.id}}, additive: {{was.additive}}",
+          "selection.completed": "Selected {{selection.count.after}} shapes (+{{selection.count.added}}/-{{selection.count.removed}}) via {{selection.method}}, took {{duration.ms}}ms"
+        }
+      }
+    },
+    {
+      "id": "brush-select",
+      "priority": 2,
+      "description": "Drag to create brush/marquee selection",
+      "template": {
+        "summary": "[SUCCESS] Brush selected {{selection.count.after}} shapes",
+        "events": {
+          "selection.started": "Pointer down on {{target.type}} at ({{origin.x}}, {{origin.y}})",
+          "selection.brush.started": "Brush started at ({{brush.origin.x}}, {{brush.origin.y}}) with {{selection.count.initial}} shapes already selected",
+          "selection.brush.updated": "Tested {{shapes.tested}} shapes, {{shapes.selected}} in brush ({{brush.width}}x{{brush.height}}px)",
+          "selection.completed": "Brush selected {{selection.count.after}} shapes (+{{selection.count.added}}/-{{selection.count.removed}}), took {{duration.ms}}ms"
+        }
+      }
+    },
+    {
+      "id": "cancelled",
+      "priority": 3,
+      "description": "Selection was cancelled or interrupted",
+      "template": {
+        "summary": "[CANCELLED] Selection cancelled: {{reason}}",
+        "events": {
+          "selection.started": "Pointer down on {{target.type}} at ({{origin.x}}, {{origin.y}})",
+          "selection.cancelled": "Cancelled: {{reason}}, selection restored: {{selection.restored}}"
+        }
+      }
+    }
+  ]
+}

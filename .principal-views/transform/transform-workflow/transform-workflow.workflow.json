@@ -1,0 +1,56 @@
+{
+  "name": "Transform gesture",
+  "version": "1.0.0",
+  "description": "Shape transformation via translate, resize, or rotate",
+  "canvas": ".principal-views/transform/transform.otel.canvas",
+  "spanPattern": "editor.transform",
+  "scenarios": [
+    {
+      "id": "translate",
+      "priority": 1,
+      "description": "Shapes moved via drag",
+      "template": {
+        "summary": "[SUCCESS] Translated {{shapes.count}} shape(s) {{distance.total}}px",
+        "events": {
+          "translate.started": "Started moving {{shapes.count}} shapes {{shapes.ids}} from ({{origin.x}}, {{origin.y}}), creating: {{is.creating}}",
+          "translate.completed": "Moved {{distance.total}}px ({{distance.x}}, {{distance.y}}), grid snap: {{snapped.to.grid}}, shape snap: {{snapped.to.shape}}, cloned: {{was.cloned}}, took {{duration.ms}}ms"
+        }
+      }
+    },
+    {
+      "id": "resize",
+      "priority": 2,
+      "description": "Shapes resized via handle drag",
+      "template": {
+        "summary": "[SUCCESS] Resized {{shapes.count}} shape(s) to {{scale.x}}x{{scale.y}}",
+        "events": {
+          "resize.started": "Started resizing {{shapes.count}} shapes via {{handle.type}} handle, corner: {{is.corner}}",
+          "resize.completed": "Scaled to ({{scale.x}}, {{scale.y}}), aspect locked: {{aspect.locked}}, flipped: x={{flipped.x}} y={{flipped.y}}, took {{duration.ms}}ms"
+        }
+      }
+    },
+    {
+      "id": "rotate",
+      "priority": 3,
+      "description": "Shapes rotated via handle drag",
+      "template": {
+        "summary": "[SUCCESS] Rotated {{shapes.count}} shape(s) by {{delta.degrees}} degrees",
+        "events": {
+          "rotate.started": "Started rotating {{shapes.count}} shapes from {{initial.angle}} degrees around ({{center.x}}, {{center.y}})",
+          "rotate.completed": "Rotated {{delta.degrees}} degrees to {{final.angle}} degrees, snapped: {{snapped.to.angle}} ({{snap.interval}} deg), took {{duration.ms}}ms"
+        }
+      }
+    },
+    {
+      "id": "cancelled",
+      "priority": 4,
+      "description": "Transform was cancelled",
+      "template": {
+        "summary": "[CANCELLED] {{transform.type}} cancelled: {{reason}}",
+        "events": {
+          "transform.cancelled": "{{transform.type}} cancelled: {{reason}}, shapes restored: {{shapes.restored}}"
+        }
+      }
+    }
+  ]
+}
