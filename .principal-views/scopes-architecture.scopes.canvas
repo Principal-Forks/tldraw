@@ -2,7 +2,7 @@
   "pv": {
     "name": "tldraw Instrumentation Scopes",
     "version": "1.0.0",
-    "markdown": ".principal-views/architecture.scopes.md",
+    "markdown": ".principal-views/scopes-architecture.scopes.md",
     "nodeTypes": {
       "scope": {
         "label": "Instrumentation Scope",
