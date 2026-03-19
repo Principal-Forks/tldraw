@@ -24,6 +24,7 @@
       "y": 0,
       "width": 1210,
       "height": 200,
+      "color": "#4A90E2",
       "label": "Core SDK (library scopes - embedded in apps)"
     },
     {
@@ -33,6 +34,7 @@
       "y": 250,
       "width": 580,
       "height": 200,
+      "color": "#7ED321",
       "label": "Multiplayer (server scopes)"
     },
     {
@@ -42,6 +44,7 @@
       "y": 500,
       "width": 580,
       "height": 200,
+      "color": "#7ED321",
       "label": "Storage & Assets (server scopes)"
     },
     {
@@ -51,6 +54,7 @@
       "y": 250,
       "width": 580,
       "height": 200,
+      "color": "#F5A623",
       "label": "Frontend (app scopes)"
     },
     {
@@ -60,244 +64,203 @@
       "y": 500,
       "width": 580,
       "height": 200,
+      "color": "#9B9B9B",
       "label": "Other (app scopes)"
     },
     {
       "id": "scope-editor",
-      "type": "text",
+      "type": "otel-scope",
       "x": 25,
       "y": 50,
       "width": 220,
       "height": 120,
       "color": "#4A90E2",
-      "text": "# @tldraw/editor\n\nCore editor engine\n\n**Spans:** `editor.canvas.*`, `editor.shape.*`, `editor.tool.*`",
-      "pv": {
-        "nodeType": "scope",
-        "description": "Covers canvas rendering, shape operations, tool state machines, and geometry calculations",
-        "otel": {
-          "scope": "@tldraw/editor"
-        }
+      "label": "@tldraw/editor",
+      "description": "Covers canvas rendering, shape operations, tool state machines, and geometry calculations",
+      "otel": {
+        "scope": "@tldraw/editor"
       }
     },
     {
       "id": "scope-tldraw",
-      "type": "text",
+      "type": "otel-scope",
       "x": 255,
       "y": 50,
       "width": 220,
       "height": 120,
       "color": "#4A90E2",
-      "text": "# @tldraw/tldraw\n\nFull SDK with UI\n\n**Spans:** `tldraw.ui.*`, `tldraw.action.*`, `tldraw.export.*`",
-      "pv": {
-        "nodeType": "scope",
-        "description": "Covers default UI components, actions, keyboard shortcuts, and export functionality",
-        "otel": {
-          "scope": "@tldraw/tldraw"
-        }
+      "label": "@tldraw/tldraw",
+      "description": "Covers default UI components, actions, keyboard shortcuts, and export functionality",
+      "otel": {
+        "scope": "@tldraw/tldraw"
       }
     },
     {
       "id": "scope-store",
-      "type": "text",
+      "type": "otel-scope",
       "x": 485,
       "y": 50,
       "width": 220,
       "height": 120,
       "color": "#4A90E2",
-      "text": "# @tldraw/store\n\nReactive database\n\n**Spans:** `store.transaction.*`, `store.query.*`, `store.persist.*`",
-      "pv": {
-        "nodeType": "scope",
-        "description": "Covers transactions, queries, migrations, and IndexedDB persistence",
-        "otel": {
-          "scope": "@tldraw/store"
-        }
+      "label": "@tldraw/store",
+      "description": "Covers transactions, queries, migrations, and IndexedDB persistence",
+      "otel": {
+        "scope": "@tldraw/store"
       }
     },
     {
       "id": "scope-state",
-      "type": "text",
+      "type": "otel-scope",
       "x": 715,
       "y": 50,
       "width": 220,
       "height": 120,
       "color": "#4A90E2",
-      "text": "# @tldraw/state\n\nReactive signals\n\n**Spans:** `state.compute.*`, `state.effect.*`",
-      "pv": {
-        "nodeType": "scope",
-        "description": "Covers signal computations, effect execution, and reactive graph updates",
-        "otel": {
-          "scope": "@tldraw/state"
-        }
+      "label": "@tldraw/state",
+      "description": "Covers signal computations, effect execution, and reactive graph updates",
+      "otel": {
+        "scope": "@tldraw/state"
       }
     },
     {
       "id": "scope-sync",
-      "type": "text",
+      "type": "otel-scope",
       "x": 945,
       "y": 50,
       "width": 220,
       "height": 120,
       "color": "#4A90E2",
-      "text": "# @tldraw/sync\n\nMultiplayer client\n\n**Spans:** `sync.client.*`, `sync.socket.*`, `sync.presence.*`",
-      "pv": {
-        "nodeType": "scope",
-        "description": "Covers WebSocket client, presence updates, and document sync protocol",
-        "otel": {
-          "scope": "@tldraw/sync"
-        }
+      "label": "@tldraw/sync",
+      "description": "Covers WebSocket client, presence updates, and document sync protocol",
+      "otel": {
+        "scope": "@tldraw/sync"
       }
     },
     {
       "id": "scope-sync-worker",
-      "type": "text",
+      "type": "otel-scope",
       "x": 25,
       "y": 300,
       "width": 260,
       "height": 120,
       "color": "#7ED321",
-      "text": "# @tldraw/sync-worker\n\nReal-time sync & collaboration\n\n**Spans:** `sync.server.*`, `durable-object.*`, `websocket.*`",
-      "pv": {
-        "nodeType": "scope",
-        "description": "Covers WebSocket connections, Durable Object lifecycle, and document synchronization",
-        "otel": {
-          "scope": "@tldraw/sync-worker"
-        }
+      "label": "@tldraw/sync-worker",
+      "description": "Covers WebSocket connections, Durable Object lifecycle, and document synchronization",
+      "otel": {
+        "scope": "@tldraw/sync-worker"
       }
     },
     {
       "id": "scope-bemo-worker",
-      "type": "text",
+      "type": "otel-scope",
       "x": 295,
       "y": 300,
       "width": 260,
       "height": 120,
       "color": "#7ED321",
-      "text": "# @tldraw/bemo-worker\n\nMerge & conflict resolution\n\n**Spans:** `merge.*`, `transform.*`",
-      "pv": {
-        "nodeType": "scope",
-        "description": "Covers operational transformation and merge conflict resolution",
-        "otel": {
-          "scope": "@tldraw/bemo-worker"
-        }
+      "label": "@tldraw/bemo-worker",
+      "description": "Covers operational transformation and merge conflict resolution",
+      "otel": {
+        "scope": "@tldraw/bemo-worker"
       }
     },
     {
       "id": "scope-asset-upload-worker",
-      "type": "text",
+      "type": "otel-scope",
       "x": 25,
       "y": 550,
       "width": 260,
       "height": 120,
       "color": "#7ED321",
-      "text": "# @tldraw/asset-upload-worker\n\nAsset upload handling\n\n**Spans:** `upload.*`, `r2.*`",
-      "pv": {
-        "nodeType": "scope",
-        "description": "Covers file uploads, validation, and R2 storage operations",
-        "otel": {
-          "scope": "@tldraw/asset-upload-worker"
-        }
+      "label": "@tldraw/asset-upload-worker",
+      "description": "Covers file uploads, validation, and R2 storage operations",
+      "otel": {
+        "scope": "@tldraw/asset-upload-worker"
       }
     },
     {
       "id": "scope-image-resize-worker",
-      "type": "text",
+      "type": "otel-scope",
       "x": 295,
       "y": 550,
       "width": 260,
       "height": 120,
       "color": "#7ED321",
-      "text": "# @tldraw/image-resize-worker\n\nImage optimization\n\n**Spans:** `image.*`, `resize.*`",
-      "pv": {
-        "nodeType": "scope",
-        "description": "Covers image fetching, resizing, and format conversion",
-        "otel": {
-          "scope": "@tldraw/image-resize-worker"
-        }
+      "label": "@tldraw/image-resize-worker",
+      "description": "Covers image fetching, resizing, and format conversion",
+      "otel": {
+        "scope": "@tldraw/image-resize-worker"
       }
     },
     {
       "id": "scope-dotcom-client",
-      "type": "text",
+      "type": "otel-scope",
       "x": 655,
       "y": 300,
       "width": 260,
       "height": 120,
       "color": "#7ED321",
-      "text": "# @tldraw/dotcom-client\n\ntldraw.com web app\n\n**Spans:** `app.*`, `route.*`, `network.*`",
-      "pv": {
-        "nodeType": "scope",
-        "description": "Covers app-specific logic, routing, and network requests in the browser",
-        "otel": {
-          "scope": "@tldraw/dotcom-client"
-        }
+      "label": "@tldraw/dotcom-client",
+      "description": "Covers app-specific logic, routing, and network requests in the browser",
+      "otel": {
+        "scope": "@tldraw/dotcom-client"
       }
     },
     {
       "id": "scope-docs",
-      "type": "text",
+      "type": "otel-scope",
       "x": 925,
       "y": 300,
       "width": 260,
       "height": 120,
       "color": "#7ED321",
-      "text": "# @tldraw/docs\n\ntldraw.dev docs site\n\n**Spans:** `page.*`, `search.*`",
-      "pv": {
-        "nodeType": "scope",
-        "description": "Covers page navigation, search, and API reference rendering",
-        "otel": {
-          "scope": "@tldraw/docs"
-        }
+      "label": "@tldraw/docs",
+      "description": "Covers page navigation, search, and API reference rendering",
+      "otel": {
+        "scope": "@tldraw/docs"
       }
     },
     {
       "id": "scope-analytics-worker",
-      "type": "text",
+      "type": "otel-scope",
       "x": 655,
       "y": 550,
       "width": 260,
       "height": 120,
       "color": "#7ED321",
-      "text": "# @tldraw/analytics-worker\n\nConsent management\n\n**Spans:** `consent.*`",
-      "pv": {
-        "nodeType": "scope",
-        "description": "Covers cookie consent checks and preference storage",
-        "otel": {
-          "scope": "@tldraw/analytics-worker"
-        }
+      "label": "@tldraw/analytics-worker",
+      "description": "Covers cookie consent checks and preference storage",
+      "otel": {
+        "scope": "@tldraw/analytics-worker"
       }
     },
     {
       "id": "scope-vscode-extension",
-      "type": "text",
+      "type": "otel-scope",
       "x": 925,
       "y": 550,
       "width": 260,
       "height": 120,
       "color": "#BD10E0",
-      "text": "# @tldraw/vscode-extension\n\nVS Code extension\n\n**Spans:** `extension.*`, `file.*`",
-      "pv": {
-        "nodeType": "scope",
-        "description": "Covers extension lifecycle, file operations, and webview communication",
-        "otel": {
-          "scope": "@tldraw/vscode-extension"
-        }
+      "label": "@tldraw/vscode-extension",
+      "description": "Covers extension lifecycle, file operations, and webview communication",
+      "otel": {
+        "scope": "@tldraw/vscode-extension"
       }
     },
     {
       "id": "scope-zero-cache",
-      "type": "text",
+      "type": "otel-scope",
       "x": 790,
       "y": 730,
       "width": 260,
       "height": 120,
       "color": "#50E3C2",
-      "text": "# @tldraw/zero-cache\n\nDatabase cache layer\n\n**Spans:** `cache.*`, `db.*`, `replication.*`",
-      "pv": {
-        "nodeType": "scope",
-        "description": "Covers Zero cache operations, PostgreSQL queries, and data replication",
-        "otel": {
-          "scope": "@tldraw/zero-cache"
-        }
+      "label": "@tldraw/zero-cache",
+      "description": "Covers Zero cache operations, PostgreSQL queries, and data replication",
+      "otel": {
+        "scope": "@tldraw/zero-cache"
       }
     }
   ],
@@ -309,7 +272,9 @@
       "toNode": "scope-dotcom-client",
       "toSide": "top",
       "label": "embedded in",
-      "pv": { "edgeType": "composition" }
+      "pv": {
+        "edgeType": "composition"
+      }
     },
     {
       "id": "e-tldraw-to-dotcom",
@@ -318,7 +283,9 @@
       "toNode": "scope-dotcom-client",
       "toSide": "top",
       "label": "embedded in",
-      "pv": { "edgeType": "composition" }
+      "pv": {
+        "edgeType": "composition"
+      }
     },
     {
       "id": "e-store-to-dotcom",
@@ -327,7 +294,9 @@
       "toNode": "scope-dotcom-client",
       "toSide": "top",
       "label": "embedded in",
-      "pv": { "edgeType": "composition" }
+      "pv": {
+        "edgeType": "composition"
+      }
     },
     {
       "id": "e-sync-to-dotcom",
@@ -336,7 +305,9 @@
       "toNode": "scope-dotcom-client",
       "toSide": "top",
       "label": "embedded in",
-      "pv": { "edgeType": "composition" }
+      "pv": {
+        "edgeType": "composition"
+      }
     },
     {
       "id": "e-editor-to-docs",
@@ -345,7 +316,9 @@
       "toNode": "scope-docs",
       "toSide": "top",
       "label": "embedded in",
-      "pv": { "edgeType": "composition" }
+      "pv": {
+        "edgeType": "composition"
+      }
     },
     {
       "id": "e-tldraw-to-docs",
@@ -354,7 +327,9 @@
       "toNode": "scope-docs",
       "toSide": "top",
       "label": "embedded in",
-      "pv": { "edgeType": "composition" }
+      "pv": {
+        "edgeType": "composition"
+      }
     },
     {
       "id": "e-editor-to-vscode",
@@ -363,7 +338,9 @@
       "toNode": "scope-vscode-extension",
       "toSide": "top",
       "label": "embedded in",
-      "pv": { "edgeType": "composition" }
+      "pv": {
+        "edgeType": "composition"
+      }
     },
     {
       "id": "e-tldraw-to-vscode",
@@ -372,7 +349,9 @@
       "toNode": "scope-vscode-extension",
       "toSide": "top",
       "label": "embedded in",
-      "pv": { "edgeType": "composition" }
+      "pv": {
+        "edgeType": "composition"
+      }
     }
   ]
 }

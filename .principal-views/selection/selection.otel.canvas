@@ -15,237 +15,225 @@
   "nodes": [
     {
       "id": "selection-started",
-      "type": "text",
+      "type": "otel-event",
       "x": 100,
       "y": 50,
       "width": 200,
       "height": 100,
       "color": "#4CAF50",
-      "text": "# Pointer Down\n\nSelection gesture begins",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/tools/SelectTool/childStates/PointingShape.ts"],
-        "event": {
-          "name": "selection.started",
-          "attributes": {
-            "target.type": {
-              "type": "string",
-              "description": "What was clicked: 'shape', 'canvas', 'selection'",
-              "required": true
-            },
-            "target.id": {
-              "type": "string",
-              "description": "ID of shape clicked (if target.type is 'shape')",
-              "required": false
-            },
-            "selection.count.before": {
-              "type": "integer",
-              "description": "Number of shapes selected before this gesture",
-              "required": true
-            },
-            "modifier.shift": {
-              "type": "boolean",
-              "description": "Whether shift key was held (additive select)",
-              "required": true
-            },
-            "modifier.ctrl": {
-              "type": "boolean",
-              "description": "Whether ctrl/cmd key was held",
-              "required": true
-            },
-            "origin.x": {
-              "type": "number",
-              "description": "Pointer X coordinate in page space",
-              "required": true
-            },
-            "origin.y": {
-              "type": "number",
-              "description": "Pointer Y coordinate in page space",
-              "required": true
-            }
+      "label": "Pointer Down",
+      "event": {
+        "name": "selection.started",
+        "attributes": {
+          "target.type": {
+            "type": "string",
+            "description": "What was clicked: 'shape', 'canvas', 'selection'",
+            "required": true
+          },
+          "target.id": {
+            "type": "string",
+            "description": "ID of shape clicked (if target.type is 'shape')",
+            "required": false
+          },
+          "selection.count.before": {
+            "type": "integer",
+            "description": "Number of shapes selected before this gesture",
+            "required": true
+          },
+          "modifier.shift": {
+            "type": "boolean",
+            "description": "Whether shift key was held (additive select)",
+            "required": true
+          },
+          "modifier.ctrl": {
+            "type": "boolean",
+            "description": "Whether ctrl/cmd key was held",
+            "required": true
+          },
+          "origin.x": {
+            "type": "number",
+            "description": "Pointer X coordinate in page space",
+            "required": true
+          },
+          "origin.y": {
+            "type": "number",
+            "description": "Pointer Y coordinate in page space",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "selection-click-applied",
-      "type": "text",
+      "type": "otel-event",
       "x": 100,
       "y": 175,
       "width": 200,
       "height": 80,
       "color": "#8BC34A",
-      "text": "# Click Applied\n\nSingle shape selected",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/tools/SelectTool/childStates/PointingShape.ts"],
-        "event": {
-          "name": "selection.click.applied",
-          "attributes": {
-            "shape.id": {
-              "type": "string",
-              "description": "ID of the clicked shape",
-              "required": true
-            },
-            "was.additive": {
-              "type": "boolean",
-              "description": "Whether this was shift-click (additive)",
-              "required": true
-            }
+      "label": "Click Applied",
+      "event": {
+        "name": "selection.click.applied",
+        "attributes": {
+          "shape.id": {
+            "type": "string",
+            "description": "ID of the clicked shape",
+            "required": true
+          },
+          "was.additive": {
+            "type": "boolean",
+            "description": "Whether this was shift-click (additive)",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "selection-brush-started",
-      "type": "text",
+      "type": "otel-event",
       "x": 350,
       "y": 150,
       "width": 200,
       "height": 100,
       "color": "#2196F3",
-      "text": "# Brush Started\n\nMarquee selection begins",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/tools/SelectTool/childStates/Brushing.ts"],
-        "event": {
-          "name": "selection.brush.started",
-          "attributes": {
-            "selection.count.initial": {
-              "type": "integer",
-              "description": "Shapes selected when brush started",
-              "required": true
-            },
-            "brush.origin.x": {
-              "type": "number",
-              "description": "Brush rectangle starting X",
-              "required": true
-            },
-            "brush.origin.y": {
-              "type": "number",
-              "description": "Brush rectangle starting Y",
-              "required": true
-            }
+      "label": "Brush Started",
+      "event": {
+        "name": "selection.brush.started",
+        "attributes": {
+          "selection.count.initial": {
+            "type": "integer",
+            "description": "Shapes selected when brush started",
+            "required": true
+          },
+          "brush.origin.x": {
+            "type": "number",
+            "description": "Brush rectangle starting X",
+            "required": true
+          },
+          "brush.origin.y": {
+            "type": "number",
+            "description": "Brush rectangle starting Y",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "selection-brush-updated",
-      "type": "text",
+      "type": "otel-event",
       "x": 350,
       "y": 300,
       "width": 200,
       "height": 100,
       "color": "#2196F3",
-      "text": "# Shapes Tested\n\nHit testing shapes",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/tools/SelectTool/childStates/Brushing.ts"],
-        "event": {
-          "name": "selection.brush.updated",
-          "attributes": {
-            "shapes.tested": {
-              "type": "integer",
-              "description": "Number of shapes tested for intersection",
-              "required": true
-            },
-            "shapes.selected": {
-              "type": "integer",
-              "description": "Number of shapes currently in brush selection",
-              "required": true
-            },
-            "brush.width": {
-              "type": "number",
-              "description": "Current brush rectangle width",
-              "required": true
-            },
-            "brush.height": {
-              "type": "number",
-              "description": "Current brush rectangle height",
-              "required": true
-            }
+      "label": "Shapes Tested",
+      "event": {
+        "name": "selection.brush.updated",
+        "attributes": {
+          "shapes.tested": {
+            "type": "integer",
+            "description": "Number of shapes tested for intersection",
+            "required": true
+          },
+          "shapes.selected": {
+            "type": "integer",
+            "description": "Number of shapes currently in brush selection",
+            "required": true
+          },
+          "brush.width": {
+            "type": "number",
+            "description": "Current brush rectangle width",
+            "required": true
+          },
+          "brush.height": {
+            "type": "number",
+            "description": "Current brush rectangle height",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "selection-completed",
-      "type": "text",
+      "type": "otel-event",
       "x": 100,
       "y": 300,
       "width": 200,
       "height": 100,
       "color": "#4CAF50",
-      "text": "# Selection Done\n\nSelection finalized",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/tools/SelectTool/childStates/PointingShape.ts"],
-        "event": {
-          "name": "selection.completed",
-          "attributes": {
-            "selection.count.after": {
-              "type": "integer",
-              "description": "Number of shapes selected after gesture",
-              "required": true
-            },
-            "selection.count.added": {
-              "type": "integer",
-              "description": "Number of shapes added to selection",
-              "required": true
-            },
-            "selection.count.removed": {
-              "type": "integer",
-              "description": "Number of shapes removed from selection",
-              "required": true
-            },
-            "selection.method": {
-              "type": "string",
-              "description": "How selection was made: 'click', 'brush', 'shift_click'",
-              "required": true
-            },
-            "duration.ms": {
-              "type": "integer",
-              "description": "Time from started to completed in milliseconds",
-              "required": true
-            }
+      "label": "Selection Done",
+      "event": {
+        "name": "selection.completed",
+        "attributes": {
+          "selection.count.after": {
+            "type": "integer",
+            "description": "Number of shapes selected after gesture",
+            "required": true
+          },
+          "selection.count.added": {
+            "type": "integer",
+            "description": "Number of shapes added to selection",
+            "required": true
+          },
+          "selection.count.removed": {
+            "type": "integer",
+            "description": "Number of shapes removed from selection",
+            "required": true
+          },
+          "selection.method": {
+            "type": "string",
+            "description": "How selection was made: 'click', 'brush', 'shift_click'",
+            "required": true
+          },
+          "duration.ms": {
+            "type": "integer",
+            "description": "Time from started to completed in milliseconds",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "selection-cancelled",
-      "type": "text",
+      "type": "otel-event",
       "x": 350,
       "y": 50,
       "width": 200,
       "height": 100,
       "color": "#F44336",
-      "text": "# Selection Cancelled\n\nGesture interrupted",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/tools/SelectTool/childStates/Brushing.ts"],
-        "event": {
-          "name": "selection.cancelled",
-          "attributes": {
-            "reason": {
-              "type": "string",
-              "description": "Why cancelled: 'user_cancelled', 'interrupted'",
-              "required": true
-            },
-            "selection.restored": {
-              "type": "boolean",
-              "description": "Whether original selection was restored",
-              "required": true
-            }
+      "label": "Selection Cancelled",
+      "event": {
+        "name": "selection.cancelled",
+        "attributes": {
+          "reason": {
+            "type": "string",
+            "description": "Why cancelled: 'user_cancelled', 'interrupted'",
+            "required": true
+          },
+          "selection.restored": {
+            "type": "boolean",
+            "description": "Whether original selection was restored",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     }
   ],
@@ -256,7 +244,9 @@
       "fromSide": "bottom",
       "toNode": "selection-click-applied",
       "toSide": "top",
-      "pv": { "edgeType": "flow" }
+      "pv": {
+        "edgeType": "flow"
+      }
     },
     {
       "id": "e-click-to-complete",
@@ -264,7 +254,9 @@
       "fromSide": "bottom",
       "toNode": "selection-completed",
       "toSide": "top",
-      "pv": { "edgeType": "flow" }
+      "pv": {
+        "edgeType": "flow"
+      }
     },
     {
       "id": "e-start-to-brush",
@@ -272,7 +264,9 @@
       "fromSide": "right",
       "toNode": "selection-brush-started",
       "toSide": "left",
-      "pv": { "edgeType": "branch" }
+      "pv": {
+        "edgeType": "branch"
+      }
     },
     {
       "id": "e-brush-to-updated",
@@ -280,7 +274,9 @@
       "fromSide": "bottom",
       "toNode": "selection-brush-updated",
       "toSide": "top",
-      "pv": { "edgeType": "flow" }
+      "pv": {
+        "edgeType": "flow"
+      }
     },
     {
       "id": "e-updated-to-complete",
@@ -288,7 +284,9 @@
       "fromSide": "left",
       "toNode": "selection-completed",
       "toSide": "right",
-      "pv": { "edgeType": "flow" }
+      "pv": {
+        "edgeType": "flow"
+      }
     },
     {
       "id": "e-start-to-cancelled",
@@ -296,7 +294,9 @@
       "fromSide": "right",
       "toNode": "selection-cancelled",
       "toSide": "left",
-      "pv": { "edgeType": "branch" }
+      "pv": {
+        "edgeType": "branch"
+      }
     },
     {
       "id": "e-brush-to-cancelled",
@@ -304,7 +304,9 @@
       "fromSide": "top",
       "toNode": "selection-cancelled",
       "toSide": "bottom",
-      "pv": { "edgeType": "branch" }
+      "pv": {
+        "edgeType": "branch"
+      }
     }
   ]
 }

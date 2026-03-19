@@ -19,6 +19,7 @@
       "y": 0,
       "width": 1400,
       "height": 180,
+      "color": "#EF4444",
       "label": "Entry Layer (SERVER/CONSUMER) - request/connection entry points"
     },
     {
@@ -28,6 +29,7 @@
       "y": 220,
       "width": 1400,
       "height": 380,
+      "color": "#3B82F6",
       "label": "Domain Layer (INTERNAL) - business logic & SDK operations"
     },
     {
@@ -37,414 +39,343 @@
       "y": 640,
       "width": 1400,
       "height": 180,
+      "color": "#10B981",
       "label": "Infrastructure Layer (CLIENT) - external calls & storage"
     },
     {
       "id": "span-http-request",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 20,
       "y": 50,
       "width": 200,
       "height": 100,
       "color": "#EF4444",
-      "text": "# http.request\n\nHTTP request handling\n\n**Kind:** SERVER",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "http.request",
-          "spanKind": "SERVER"
-        }
+      "label": "http.request",
+      "otel": {
+        "spanPattern": "http.request",
+        "spanKind": "SERVER"
       }
     },
     {
       "id": "span-websocket-connect",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 240,
       "y": 50,
       "width": 200,
       "height": 100,
       "color": "#EF4444",
-      "text": "# websocket.connect\n\nWebSocket connection\n\n**Kind:** SERVER",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "websocket.connect",
-          "spanKind": "SERVER"
-        }
+      "label": "websocket.connect",
+      "otel": {
+        "spanPattern": "websocket.connect",
+        "spanKind": "SERVER"
       }
     },
     {
       "id": "span-websocket-message",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 460,
       "y": 50,
       "width": 200,
       "height": 100,
       "color": "#EF4444",
-      "text": "# websocket.message\n\nWebSocket message\n\n**Kind:** SERVER",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "websocket.message",
-          "spanKind": "SERVER"
-        }
+      "label": "websocket.message",
+      "otel": {
+        "spanPattern": "websocket.message",
+        "spanKind": "SERVER"
       }
     },
     {
       "id": "span-durable-object-fetch",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 680,
       "y": 50,
       "width": 200,
       "height": 100,
       "color": "#EF4444",
-      "text": "# durable-object.fetch\n\nDurable Object request\n\n**Kind:** SERVER",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "durable-object.fetch",
-          "spanKind": "SERVER"
-        }
+      "label": "durable-object.fetch",
+      "otel": {
+        "spanPattern": "durable-object.fetch",
+        "spanKind": "SERVER"
       }
     },
     {
       "id": "span-app-route",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 900,
       "y": 50,
       "width": 200,
       "height": 100,
       "color": "#EF4444",
-      "text": "# app.route.*\n\nClient-side navigation\n\n**Kind:** INTERNAL",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "app.route.*",
-          "spanKind": "INTERNAL"
-        }
+      "label": "app.route.",
+      "otel": {
+        "spanPattern": "app.route.*",
+        "spanKind": "INTERNAL"
       }
     },
     {
       "id": "span-extension-activate",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 1120,
       "y": 50,
       "width": 200,
       "height": 100,
       "color": "#EF4444",
-      "text": "# extension.activate\n\nVS Code activation\n\n**Kind:** INTERNAL",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "extension.activate",
-          "spanKind": "INTERNAL"
-        }
+      "label": "extension.activate",
+      "otel": {
+        "spanPattern": "extension.activate",
+        "spanKind": "INTERNAL"
       }
     },
     {
       "id": "span-editor-tool",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 20,
       "y": 270,
       "width": 200,
       "height": 100,
       "color": "#3B82F6",
-      "text": "# editor.tool.*\n\nTool state changes\n\n**Kind:** INTERNAL",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "editor.tool.*",
-          "spanKind": "INTERNAL"
-        }
+      "label": "editor.tool.",
+      "otel": {
+        "spanPattern": "editor.tool.*",
+        "spanKind": "INTERNAL"
       }
     },
     {
       "id": "span-editor-shape",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 240,
       "y": 270,
       "width": 200,
       "height": 100,
       "color": "#3B82F6",
-      "text": "# editor.shape.*\n\nShape CRUD operations\n\n**Kind:** INTERNAL",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "editor.shape.*",
-          "spanKind": "INTERNAL"
-        }
+      "label": "editor.shape.",
+      "otel": {
+        "spanPattern": "editor.shape.*",
+        "spanKind": "INTERNAL"
       }
     },
     {
       "id": "span-editor-canvas",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 460,
       "y": 270,
       "width": 200,
       "height": 100,
       "color": "#3B82F6",
-      "text": "# editor.canvas.*\n\nCanvas operations\n\n**Kind:** INTERNAL",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "editor.canvas.*",
-          "spanKind": "INTERNAL"
-        }
+      "label": "editor.canvas.",
+      "otel": {
+        "spanPattern": "editor.canvas.*",
+        "spanKind": "INTERNAL"
       }
     },
     {
       "id": "span-tldraw-ui",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 680,
       "y": 270,
       "width": 200,
       "height": 100,
       "color": "#3B82F6",
-      "text": "# tldraw.ui.*\n\nUI interactions\n\n**Kind:** INTERNAL",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "tldraw.ui.*",
-          "spanKind": "INTERNAL"
-        }
+      "label": "tldraw.ui.",
+      "otel": {
+        "spanPattern": "tldraw.ui.*",
+        "spanKind": "INTERNAL"
       }
     },
     {
       "id": "span-tldraw-action",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 900,
       "y": 270,
       "width": 200,
       "height": 100,
       "color": "#3B82F6",
-      "text": "# tldraw.action.*\n\nUser actions (undo, etc)\n\n**Kind:** INTERNAL",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "tldraw.action.*",
-          "spanKind": "INTERNAL"
-        }
+      "label": "tldraw.action.",
+      "otel": {
+        "spanPattern": "tldraw.action.*",
+        "spanKind": "INTERNAL"
       }
     },
     {
       "id": "span-tldraw-export",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 1120,
       "y": 270,
       "width": 200,
       "height": 100,
       "color": "#3B82F6",
-      "text": "# tldraw.export.*\n\nExport operations\n\n**Kind:** INTERNAL",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "tldraw.export.*",
-          "spanKind": "INTERNAL"
-        }
+      "label": "tldraw.export.",
+      "otel": {
+        "spanPattern": "tldraw.export.*",
+        "spanKind": "INTERNAL"
       }
     },
     {
       "id": "span-store-transaction",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 20,
       "y": 390,
       "width": 200,
       "height": 100,
       "color": "#8B5CF6",
-      "text": "# store.transaction.*\n\nStore transactions\n\n**Kind:** INTERNAL",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "store.transaction.*",
-          "spanKind": "INTERNAL"
-        }
+      "label": "store.transaction.",
+      "otel": {
+        "spanPattern": "store.transaction.*",
+        "spanKind": "INTERNAL"
       }
     },
     {
       "id": "span-sync-client",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 240,
       "y": 390,
       "width": 200,
       "height": 100,
       "color": "#8B5CF6",
-      "text": "# sync.client.*\n\nSync client operations\n\n**Kind:** INTERNAL",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "sync.client.*",
-          "spanKind": "INTERNAL"
-        }
+      "label": "sync.client.",
+      "otel": {
+        "spanPattern": "sync.client.*",
+        "spanKind": "INTERNAL"
       }
     },
     {
       "id": "span-sync-server",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 460,
       "y": 390,
       "width": 200,
       "height": 100,
       "color": "#8B5CF6",
-      "text": "# sync.server.*\n\nSync server operations\n\n**Kind:** INTERNAL",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "sync.server.*",
-          "spanKind": "INTERNAL"
-        }
+      "label": "sync.server.",
+      "otel": {
+        "spanPattern": "sync.server.*",
+        "spanKind": "INTERNAL"
       }
     },
     {
       "id": "span-sync-presence",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 680,
       "y": 390,
       "width": 200,
       "height": 100,
       "color": "#8B5CF6",
-      "text": "# sync.presence.*\n\nPresence updates\n\n**Kind:** INTERNAL",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "sync.presence.*",
-          "spanKind": "INTERNAL"
-        }
+      "label": "sync.presence.",
+      "otel": {
+        "spanPattern": "sync.presence.*",
+        "spanKind": "INTERNAL"
       }
     },
     {
       "id": "span-merge",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 900,
       "y": 390,
       "width": 200,
       "height": 100,
       "color": "#8B5CF6",
-      "text": "# merge.*\n\nMerge operations\n\n**Kind:** INTERNAL",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "merge.*",
-          "spanKind": "INTERNAL"
-        }
+      "label": "merge.",
+      "otel": {
+        "spanPattern": "merge.*",
+        "spanKind": "INTERNAL"
       }
     },
     {
       "id": "span-upload",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 1120,
       "y": 390,
       "width": 200,
       "height": 100,
       "color": "#8B5CF6",
-      "text": "# upload.*\n\nUpload processing\n\n**Kind:** INTERNAL",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "upload.*",
-          "spanKind": "INTERNAL"
-        }
+      "label": "upload.",
+      "otel": {
+        "spanPattern": "upload.*",
+        "spanKind": "INTERNAL"
       }
     },
     {
       "id": "span-store-persist",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 20,
       "y": 690,
       "width": 200,
       "height": 100,
       "color": "#10B981",
-      "text": "# store.persist.*\n\nIndexedDB persistence\n\n**Kind:** CLIENT",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "store.persist.*",
-          "spanKind": "CLIENT"
-        }
+      "label": "store.persist.",
+      "otel": {
+        "spanPattern": "store.persist.*",
+        "spanKind": "CLIENT"
       }
     },
     {
       "id": "span-sync-socket",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 240,
       "y": 690,
       "width": 200,
       "height": 100,
       "color": "#10B981",
-      "text": "# sync.socket.*\n\nWebSocket I/O\n\n**Kind:** CLIENT",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "sync.socket.*",
-          "spanKind": "CLIENT"
-        }
+      "label": "sync.socket.",
+      "otel": {
+        "spanPattern": "sync.socket.*",
+        "spanKind": "CLIENT"
       }
     },
     {
       "id": "span-r2",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 460,
       "y": 690,
       "width": 200,
       "height": 100,
       "color": "#10B981",
-      "text": "# r2.*\n\nR2 storage operations\n\n**Kind:** CLIENT",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "r2.*",
-          "spanKind": "CLIENT"
-        }
+      "label": "r2.",
+      "otel": {
+        "spanPattern": "r2.*",
+        "spanKind": "CLIENT"
       }
     },
     {
       "id": "span-db",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 680,
       "y": 690,
       "width": 200,
       "height": 100,
       "color": "#10B981",
-      "text": "# db.*\n\nDatabase queries\n\n**Kind:** CLIENT",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "db.*",
-          "spanKind": "CLIENT"
-        }
+      "label": "db.",
+      "otel": {
+        "spanPattern": "db.*",
+        "spanKind": "CLIENT"
       }
     },
     {
       "id": "span-cache",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 900,
       "y": 690,
       "width": 200,
       "height": 100,
       "color": "#10B981",
-      "text": "# cache.*\n\nCache operations\n\n**Kind:** CLIENT",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "cache.*",
-          "spanKind": "CLIENT"
-        }
+      "label": "cache.",
+      "otel": {
+        "spanPattern": "cache.*",
+        "spanKind": "CLIENT"
       }
     },
     {
       "id": "span-image",
-      "type": "text",
+      "type": "otel-span-convention",
       "x": 1120,
       "y": 690,
       "width": 200,
       "height": 100,
       "color": "#10B981",
-      "text": "# image.*\n\nImage fetch/resize\n\n**Kind:** CLIENT",
-      "pv": {
-        "nodeType": "span-convention",
-        "otel": {
-          "spanPattern": "image.*",
-          "spanKind": "CLIENT"
-        }
+      "label": "image.",
+      "otel": {
+        "spanPattern": "image.*",
+        "spanKind": "CLIENT"
       }
     }
   ],
@@ -455,7 +386,9 @@
       "fromSide": "bottom",
       "toNode": "span-sync-server",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-http-to-upload",
@@ -463,7 +396,9 @@
       "fromSide": "bottom",
       "toNode": "span-upload",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-ws-connect-to-sync-server",
@@ -471,7 +406,9 @@
       "fromSide": "bottom",
       "toNode": "span-sync-server",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-ws-message-to-sync-server",
@@ -479,7 +416,9 @@
       "fromSide": "bottom",
       "toNode": "span-sync-server",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-ws-message-to-merge",
@@ -487,7 +426,9 @@
       "fromSide": "bottom",
       "toNode": "span-merge",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-do-to-sync-server",
@@ -495,7 +436,9 @@
       "fromSide": "bottom",
       "toNode": "span-sync-server",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-do-to-presence",
@@ -503,7 +446,9 @@
       "fromSide": "bottom",
       "toNode": "span-sync-presence",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-route-to-editor-tool",
@@ -511,7 +456,9 @@
       "fromSide": "bottom",
       "toNode": "span-editor-tool",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-route-to-sync-client",
@@ -519,7 +466,9 @@
       "fromSide": "bottom",
       "toNode": "span-sync-client",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-ext-to-editor-tool",
@@ -527,7 +476,9 @@
       "fromSide": "bottom",
       "toNode": "span-editor-tool",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-ui-to-action",
@@ -535,7 +486,9 @@
       "fromSide": "right",
       "toNode": "span-tldraw-action",
       "toSide": "left",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-action-to-shape",
@@ -543,7 +496,9 @@
       "fromSide": "left",
       "toNode": "span-editor-shape",
       "toSide": "right",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-tool-to-shape",
@@ -551,7 +506,9 @@
       "fromSide": "right",
       "toNode": "span-editor-shape",
       "toSide": "left",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-shape-to-canvas",
@@ -559,7 +516,9 @@
       "fromSide": "right",
       "toNode": "span-editor-canvas",
       "toSide": "left",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-shape-to-store",
@@ -567,7 +526,9 @@
       "fromSide": "bottom",
       "toNode": "span-store-transaction",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-export-to-canvas",
@@ -575,7 +536,9 @@
       "fromSide": "left",
       "toNode": "span-editor-canvas",
       "toSide": "right",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-store-to-persist",
@@ -583,7 +546,9 @@
       "fromSide": "bottom",
       "toNode": "span-store-persist",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-store-to-sync-client",
@@ -591,7 +556,9 @@
       "fromSide": "right",
       "toNode": "span-sync-client",
       "toSide": "left",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-sync-client-to-socket",
@@ -599,7 +566,9 @@
       "fromSide": "bottom",
       "toNode": "span-sync-socket",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-sync-server-to-db",
@@ -607,7 +576,9 @@
       "fromSide": "bottom",
       "toNode": "span-db",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-sync-server-to-cache",
@@ -615,7 +586,9 @@
       "fromSide": "bottom",
       "toNode": "span-cache",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-presence-to-db",
@@ -623,7 +596,9 @@
       "fromSide": "bottom",
       "toNode": "span-db",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-upload-to-r2",
@@ -631,7 +606,9 @@
       "fromSide": "bottom",
       "toNode": "span-r2",
       "toSide": "top",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     },
     {
       "id": "e-image-to-r2",
@@ -639,7 +616,9 @@
       "fromSide": "left",
       "toNode": "span-r2",
       "toSide": "right",
-      "pv": { "edgeType": "parent-child" }
+      "pv": {
+        "edgeType": "parent-child"
+      }
     }
   ]
 }

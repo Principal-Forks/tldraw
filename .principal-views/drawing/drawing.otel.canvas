@@ -15,227 +15,217 @@
   "nodes": [
     {
       "id": "drawing-started",
-      "type": "text",
+      "type": "otel-event",
       "x": 100,
       "y": 50,
       "width": 200,
       "height": 100,
       "color": "#4CAF50",
-      "text": "# Gesture Started\n\nDrawing gesture begins",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/shapes/draw/toolStates/Drawing.ts"],
-        "event": {
-          "name": "drawing.started",
-          "attributes": {
-            "shape.id": {
-              "type": "string",
-              "description": "ID of the shape being created",
-              "required": true
-            },
-            "shape.type": {
-              "type": "string",
-              "description": "Type of shape: 'draw' or 'highlight'",
-              "required": true
-            },
-            "input.type": {
-              "type": "string",
-              "description": "Input device: 'pen', 'stylus', or 'mouse'",
-              "required": true
-            },
-            "segment.mode": {
-              "type": "string",
-              "description": "Initial segment mode: 'free' or 'straight'",
-              "required": true
-            },
-            "origin.x": {
-              "type": "number",
-              "description": "Starting X coordinate in page space",
-              "required": true
-            },
-            "origin.y": {
-              "type": "number",
-              "description": "Starting Y coordinate in page space",
-              "required": true
-            },
-            "pressure": {
-              "type": "number",
-              "description": "Initial pressure value (0-1)",
-              "required": false
-            }
+      "label": "Gesture Started",
+      "event": {
+        "name": "drawing.started",
+        "attributes": {
+          "shape.id": {
+            "type": "string",
+            "description": "ID of the shape being created",
+            "required": true
+          },
+          "shape.type": {
+            "type": "string",
+            "description": "Type of shape: 'draw' or 'highlight'",
+            "required": true
+          },
+          "input.type": {
+            "type": "string",
+            "description": "Input device: 'pen', 'stylus', or 'mouse'",
+            "required": true
+          },
+          "segment.mode": {
+            "type": "string",
+            "description": "Initial segment mode: 'free' or 'straight'",
+            "required": true
+          },
+          "origin.x": {
+            "type": "number",
+            "description": "Starting X coordinate in page space",
+            "required": true
+          },
+          "origin.y": {
+            "type": "number",
+            "description": "Starting Y coordinate in page space",
+            "required": true
+          },
+          "pressure": {
+            "type": "number",
+            "description": "Initial pressure value (0-1)",
+            "required": false
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "drawing-updated",
-      "type": "text",
+      "type": "otel-event",
       "x": 100,
       "y": 200,
       "width": 200,
       "height": 100,
       "color": "#2196F3",
-      "text": "# Points Added\n\nPoints added to shape",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/shapes/draw/toolStates/Drawing.ts"],
-        "event": {
-          "name": "drawing.updated",
-          "attributes": {
-            "shape.id": {
-              "type": "string",
-              "description": "ID of the shape being updated",
-              "required": true
-            },
-            "points.current": {
-              "type": "integer",
-              "description": "Total points in current segment",
-              "required": true
-            },
-            "segment.count": {
-              "type": "integer",
-              "description": "Total segments in shape",
-              "required": true
-            },
-            "line.length": {
-              "type": "number",
-              "description": "Current total line length",
-              "required": true
-            },
-            "segment.mode": {
-              "type": "string",
-              "description": "Current segment mode: 'free' or 'straight'",
-              "required": true
-            }
+      "label": "Points Added",
+      "event": {
+        "name": "drawing.updated",
+        "attributes": {
+          "shape.id": {
+            "type": "string",
+            "description": "ID of the shape being updated",
+            "required": true
+          },
+          "points.current": {
+            "type": "integer",
+            "description": "Total points in current segment",
+            "required": true
+          },
+          "segment.count": {
+            "type": "integer",
+            "description": "Total segments in shape",
+            "required": true
+          },
+          "line.length": {
+            "type": "number",
+            "description": "Current total line length",
+            "required": true
+          },
+          "segment.mode": {
+            "type": "string",
+            "description": "Current segment mode: 'free' or 'straight'",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "drawing-overflow",
-      "type": "text",
+      "type": "otel-event",
       "x": 350,
       "y": 350,
       "width": 200,
       "height": 100,
       "color": "#9C27B0",
-      "text": "# Points Overflow\n\nMax points exceeded",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/shapes/draw/toolStates/Drawing.ts"],
-        "event": {
-          "name": "drawing.overflow",
-          "attributes": {
-            "completed.shape.id": {
-              "type": "string",
-              "description": "ID of the shape that was completed",
-              "required": true
-            },
-            "new.shape.id": {
-              "type": "string",
-              "description": "ID of the new shape created",
-              "required": true
-            },
-            "points.at.overflow": {
-              "type": "integer",
-              "description": "Number of points that triggered overflow",
-              "required": true
-            }
+      "label": "Points Overflow",
+      "event": {
+        "name": "drawing.overflow",
+        "attributes": {
+          "completed.shape.id": {
+            "type": "string",
+            "description": "ID of the shape that was completed",
+            "required": true
+          },
+          "new.shape.id": {
+            "type": "string",
+            "description": "ID of the new shape created",
+            "required": true
+          },
+          "points.at.overflow": {
+            "type": "integer",
+            "description": "Number of points that triggered overflow",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "drawing-complete",
-      "type": "text",
+      "type": "otel-event",
       "x": 100,
       "y": 350,
       "width": 200,
       "height": 100,
       "color": "#4CAF50",
-      "text": "# Drawing Finished\n\nShape completed",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/shapes/draw/toolStates/Drawing.ts"],
-        "event": {
-          "name": "drawing.complete",
-          "attributes": {
-            "shape.id": {
-              "type": "string",
-              "description": "ID of the completed shape",
-              "required": true
-            },
-            "shape.type": {
-              "type": "string",
-              "description": "Type: 'draw' or 'highlight'",
-              "required": true
-            },
-            "points.total": {
-              "type": "integer",
-              "description": "Total points across all segments",
-              "required": true
-            },
-            "segment.count": {
-              "type": "integer",
-              "description": "Number of segments",
-              "required": true
-            },
-            "line.length": {
-              "type": "number",
-              "description": "Total line length",
-              "required": true
-            },
-            "is.closed": {
-              "type": "boolean",
-              "description": "Whether the shape forms a closed loop",
-              "required": true
-            },
-            "duration.ms": {
-              "type": "integer",
-              "description": "Time from start to complete in milliseconds",
-              "required": true
-            }
+      "label": "Drawing Finished",
+      "event": {
+        "name": "drawing.complete",
+        "attributes": {
+          "shape.id": {
+            "type": "string",
+            "description": "ID of the completed shape",
+            "required": true
+          },
+          "shape.type": {
+            "type": "string",
+            "description": "Type: 'draw' or 'highlight'",
+            "required": true
+          },
+          "points.total": {
+            "type": "integer",
+            "description": "Total points across all segments",
+            "required": true
+          },
+          "segment.count": {
+            "type": "integer",
+            "description": "Number of segments",
+            "required": true
+          },
+          "line.length": {
+            "type": "number",
+            "description": "Total line length",
+            "required": true
+          },
+          "is.closed": {
+            "type": "boolean",
+            "description": "Whether the shape forms a closed loop",
+            "required": true
+          },
+          "duration.ms": {
+            "type": "integer",
+            "description": "Time from start to complete in milliseconds",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "drawing-cancelled",
-      "type": "text",
+      "type": "otel-event",
       "x": 350,
       "y": 50,
       "width": 200,
       "height": 100,
       "color": "#F44336",
-      "text": "# Drawing Cancelled\n\nCancelled or interrupted",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/shapes/draw/toolStates/Drawing.ts"],
-        "event": {
-          "name": "drawing.cancelled",
-          "attributes": {
-            "shape.id": {
-              "type": "string",
-              "description": "ID of the shape that was rolled back",
-              "required": true
-            },
-            "reason": {
-              "type": "string",
-              "description": "Why cancelled: 'user_cancelled', 'interrupted', 'shape_limit'",
-              "required": true
-            },
-            "points.drawn": {
-              "type": "integer",
-              "description": "Points drawn before cancellation",
-              "required": false
-            }
+      "label": "Drawing Cancelled",
+      "event": {
+        "name": "drawing.cancelled",
+        "attributes": {
+          "shape.id": {
+            "type": "string",
+            "description": "ID of the shape that was rolled back",
+            "required": true
+          },
+          "reason": {
+            "type": "string",
+            "description": "Why cancelled: 'user_cancelled', 'interrupted', 'shape_limit'",
+            "required": true
+          },
+          "points.drawn": {
+            "type": "integer",
+            "description": "Points drawn before cancellation",
+            "required": false
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     }
   ],
@@ -246,7 +236,9 @@
       "fromSide": "bottom",
       "toNode": "drawing-updated",
       "toSide": "top",
-      "pv": { "edgeType": "flow" }
+      "pv": {
+        "edgeType": "flow"
+      }
     },
     {
       "id": "e-update-to-complete",
@@ -254,7 +246,9 @@
       "fromSide": "bottom",
       "toNode": "drawing-complete",
       "toSide": "top",
-      "pv": { "edgeType": "flow" }
+      "pv": {
+        "edgeType": "flow"
+      }
     },
     {
       "id": "e-update-to-overflow",
@@ -262,7 +256,9 @@
       "fromSide": "bottom",
       "toNode": "drawing-overflow",
       "toSide": "top",
-      "pv": { "edgeType": "branch" }
+      "pv": {
+        "edgeType": "branch"
+      }
     },
     {
       "id": "e-overflow-to-start",
@@ -270,7 +266,9 @@
       "fromSide": "left",
       "toNode": "drawing-started",
       "toSide": "bottom",
-      "pv": { "edgeType": "flow" }
+      "pv": {
+        "edgeType": "flow"
+      }
     },
     {
       "id": "e-start-to-cancelled",
@@ -278,7 +276,9 @@
       "fromSide": "right",
       "toNode": "drawing-cancelled",
       "toSide": "left",
-      "pv": { "edgeType": "branch" }
+      "pv": {
+        "edgeType": "branch"
+      }
     }
   ]
 }

@@ -2,23 +2,51 @@ version: "1.0.0"
 name: "tldraw Component Library"
 
 # OTEL instrumentation scopes owned by this codebase
-owned-scopes:
+scopes:
   # Core SDK libraries (embedded in apps)
-  - "@tldraw/editor"
-  - "@tldraw/tldraw"
-  - "@tldraw/store"
-  - "@tldraw/state"
-  - "@tldraw/sync"
+  "@tldraw/editor":
+    color: "#4A90E2"
+    description: "Core canvas editor engine - rendering, shape operations, tool state machines"
+  "@tldraw/tldraw":
+    color: "#4A90E2"
+    description: "Complete SDK with UI components, actions, and default shapes"
+  "@tldraw/store":
+    color: "#4A90E2"
+    description: "Reactive client-side database - transactions, queries, persistence"
+  "@tldraw/state":
+    color: "#4A90E2"
+    description: "Reactive signals library - computations, effects, reactive graph"
+  "@tldraw/sync":
+    color: "#4A90E2"
+    description: "Multiplayer synchronization SDK - WebSocket client, presence, sync protocol"
   # Application scopes (deployed services)
-  - "@tldraw/sync-worker"
-  - "@tldraw/bemo-worker"
-  - "@tldraw/asset-upload-worker"
-  - "@tldraw/image-resize-worker"
-  - "@tldraw/analytics-worker"
-  - "@tldraw/dotcom-client"
-  - "@tldraw/docs"
-  - "@tldraw/vscode-extension"
-  - "@tldraw/zero-cache"
+  "@tldraw/sync-worker":
+    color: "#7ED321"
+    description: "Multiplayer backend worker - WebSocket connections, Durable Objects, document sync"
+  "@tldraw/bemo-worker":
+    color: "#7ED321"
+    description: "Operational transformation worker - merge conflict resolution"
+  "@tldraw/asset-upload-worker":
+    color: "#7ED321"
+    description: "Asset upload service - file validation, R2 storage operations"
+  "@tldraw/image-resize-worker":
+    color: "#7ED321"
+    description: "Image processing service - fetching, resizing, format conversion"
+  "@tldraw/analytics-worker":
+    color: "#7ED321"
+    description: "Analytics consent service - cookie consent, preference storage"
+  "@tldraw/dotcom-client":
+    color: "#7ED321"
+    description: "tldraw.com web application - routing, network requests, app logic"
+  "@tldraw/docs":
+    color: "#7ED321"
+    description: "Documentation site - page navigation, search, API reference"
+  "@tldraw/vscode-extension":
+    color: "#BD10E0"
+    description: "VSCode extension - extension lifecycle, file operations, webview"
+  "@tldraw/zero-cache":
+    color: "#50E3C2"
+    description: "Zero cache operations - PostgreSQL queries, data replication"
 
 nodeComponents:
   CorePackage:

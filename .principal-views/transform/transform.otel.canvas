@@ -15,307 +15,293 @@
   "nodes": [
     {
       "id": "translate-started",
-      "type": "text",
+      "type": "otel-event",
       "x": 100,
       "y": 50,
       "width": 200,
       "height": 100,
       "color": "#4CAF50",
-      "text": "# Translate Started\n\nDrag-to-move begins",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/tools/SelectTool/childStates/Translating.ts"],
-        "event": {
-          "name": "translate.started",
-          "attributes": {
-            "shapes.count": {
-              "type": "integer",
-              "description": "Number of shapes being translated",
-              "required": true
-            },
-            "shapes.ids": {
-              "type": "array",
-              "description": "IDs of shapes being translated",
-              "required": true
-            },
-            "origin.x": {
-              "type": "number",
-              "description": "Starting X coordinate",
-              "required": true
-            },
-            "origin.y": {
-              "type": "number",
-              "description": "Starting Y coordinate",
-              "required": true
-            },
-            "is.creating": {
-              "type": "boolean",
-              "description": "Whether this is part of shape creation flow",
-              "required": true
-            }
+      "label": "Translate Started",
+      "event": {
+        "name": "translate.started",
+        "attributes": {
+          "shapes.count": {
+            "type": "integer",
+            "description": "Number of shapes being translated",
+            "required": true
+          },
+          "shapes.ids": {
+            "type": "array",
+            "description": "IDs of shapes being translated",
+            "required": true
+          },
+          "origin.x": {
+            "type": "number",
+            "description": "Starting X coordinate",
+            "required": true
+          },
+          "origin.y": {
+            "type": "number",
+            "description": "Starting Y coordinate",
+            "required": true
+          },
+          "is.creating": {
+            "type": "boolean",
+            "description": "Whether this is part of shape creation flow",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "translate-completed",
-      "type": "text",
+      "type": "otel-event",
       "x": 100,
       "y": 200,
       "width": 200,
       "height": 100,
       "color": "#4CAF50",
-      "text": "# Translate Done\n\nShapes moved to new position",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/tools/SelectTool/childStates/Translating.ts"],
-        "event": {
-          "name": "translate.completed",
-          "attributes": {
-            "distance.x": {
-              "type": "number",
-              "description": "Total X distance moved",
-              "required": true
-            },
-            "distance.y": {
-              "type": "number",
-              "description": "Total Y distance moved",
-              "required": true
-            },
-            "distance.total": {
-              "type": "number",
-              "description": "Total distance moved (Euclidean)",
-              "required": true
-            },
-            "snapped.to.grid": {
-              "type": "boolean",
-              "description": "Whether final position snapped to grid",
-              "required": true
-            },
-            "snapped.to.shape": {
-              "type": "boolean",
-              "description": "Whether snapped to another shape",
-              "required": true
-            },
-            "duration.ms": {
-              "type": "integer",
-              "description": "Total duration of translate",
-              "required": true
-            },
-            "was.cloned": {
-              "type": "boolean",
-              "description": "Whether shapes were cloned via alt-drag",
-              "required": true
-            }
+      "label": "Translate Done",
+      "event": {
+        "name": "translate.completed",
+        "attributes": {
+          "distance.x": {
+            "type": "number",
+            "description": "Total X distance moved",
+            "required": true
+          },
+          "distance.y": {
+            "type": "number",
+            "description": "Total Y distance moved",
+            "required": true
+          },
+          "distance.total": {
+            "type": "number",
+            "description": "Total distance moved (Euclidean)",
+            "required": true
+          },
+          "snapped.to.grid": {
+            "type": "boolean",
+            "description": "Whether final position snapped to grid",
+            "required": true
+          },
+          "snapped.to.shape": {
+            "type": "boolean",
+            "description": "Whether snapped to another shape",
+            "required": true
+          },
+          "duration.ms": {
+            "type": "integer",
+            "description": "Total duration of translate",
+            "required": true
+          },
+          "was.cloned": {
+            "type": "boolean",
+            "description": "Whether shapes were cloned via alt-drag",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "resize-started",
-      "type": "text",
+      "type": "otel-event",
       "x": 100,
       "y": 350,
       "width": 200,
       "height": 100,
       "color": "#2196F3",
-      "text": "# Resize Started\n\nHandle drag begins",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/tools/SelectTool/childStates/Resizing.ts"],
-        "event": {
-          "name": "resize.started",
-          "attributes": {
-            "shapes.count": {
-              "type": "integer",
-              "description": "Number of shapes being resized",
-              "required": true
-            },
-            "handle.type": {
-              "type": "string",
-              "description": "Handle position: 'top', 'bottom', 'left', 'right', 'top_left', etc.",
-              "required": true
-            },
-            "is.corner": {
-              "type": "boolean",
-              "description": "Whether using a corner handle",
-              "required": true
-            }
+      "label": "Resize Started",
+      "event": {
+        "name": "resize.started",
+        "attributes": {
+          "shapes.count": {
+            "type": "integer",
+            "description": "Number of shapes being resized",
+            "required": true
+          },
+          "handle.type": {
+            "type": "string",
+            "description": "Handle position: 'top', 'bottom', 'left', 'right', 'top_left', etc.",
+            "required": true
+          },
+          "is.corner": {
+            "type": "boolean",
+            "description": "Whether using a corner handle",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "resize-completed",
-      "type": "text",
+      "type": "otel-event",
       "x": 100,
       "y": 500,
       "width": 200,
       "height": 100,
       "color": "#2196F3",
-      "text": "# Resize Done\n\nShapes resized",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/tools/SelectTool/childStates/Resizing.ts"],
-        "event": {
-          "name": "resize.completed",
-          "attributes": {
-            "scale.x": {
-              "type": "number",
-              "description": "Final X scale factor",
-              "required": true
-            },
-            "scale.y": {
-              "type": "number",
-              "description": "Final Y scale factor",
-              "required": true
-            },
-            "aspect.locked": {
-              "type": "boolean",
-              "description": "Whether aspect ratio was locked",
-              "required": true
-            },
-            "flipped.x": {
-              "type": "boolean",
-              "description": "Whether shapes were flipped horizontally",
-              "required": true
-            },
-            "flipped.y": {
-              "type": "boolean",
-              "description": "Whether shapes were flipped vertically",
-              "required": true
-            },
-            "duration.ms": {
-              "type": "integer",
-              "description": "Total duration of resize",
-              "required": true
-            }
+      "label": "Resize Done",
+      "event": {
+        "name": "resize.completed",
+        "attributes": {
+          "scale.x": {
+            "type": "number",
+            "description": "Final X scale factor",
+            "required": true
+          },
+          "scale.y": {
+            "type": "number",
+            "description": "Final Y scale factor",
+            "required": true
+          },
+          "aspect.locked": {
+            "type": "boolean",
+            "description": "Whether aspect ratio was locked",
+            "required": true
+          },
+          "flipped.x": {
+            "type": "boolean",
+            "description": "Whether shapes were flipped horizontally",
+            "required": true
+          },
+          "flipped.y": {
+            "type": "boolean",
+            "description": "Whether shapes were flipped vertically",
+            "required": true
+          },
+          "duration.ms": {
+            "type": "integer",
+            "description": "Total duration of resize",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "rotate-started",
-      "type": "text",
+      "type": "otel-event",
       "x": 350,
       "y": 350,
       "width": 200,
       "height": 100,
       "color": "#FF9800",
-      "text": "# Rotate Started\n\nRotation handle drag begins",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/tools/SelectTool/childStates/Rotating.ts"],
-        "event": {
-          "name": "rotate.started",
-          "attributes": {
-            "shapes.count": {
-              "type": "integer",
-              "description": "Number of shapes being rotated",
-              "required": true
-            },
-            "initial.angle": {
-              "type": "number",
-              "description": "Starting rotation angle in degrees",
-              "required": true
-            },
-            "center.x": {
-              "type": "number",
-              "description": "Rotation center X coordinate",
-              "required": true
-            },
-            "center.y": {
-              "type": "number",
-              "description": "Rotation center Y coordinate",
-              "required": true
-            }
+      "label": "Rotate Started",
+      "event": {
+        "name": "rotate.started",
+        "attributes": {
+          "shapes.count": {
+            "type": "integer",
+            "description": "Number of shapes being rotated",
+            "required": true
+          },
+          "initial.angle": {
+            "type": "number",
+            "description": "Starting rotation angle in degrees",
+            "required": true
+          },
+          "center.x": {
+            "type": "number",
+            "description": "Rotation center X coordinate",
+            "required": true
+          },
+          "center.y": {
+            "type": "number",
+            "description": "Rotation center Y coordinate",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "rotate-completed",
-      "type": "text",
+      "type": "otel-event",
       "x": 350,
       "y": 500,
       "width": 200,
       "height": 100,
       "color": "#FF9800",
-      "text": "# Rotate Done\n\nShapes rotated",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/tools/SelectTool/childStates/Rotating.ts"],
-        "event": {
-          "name": "rotate.completed",
-          "attributes": {
-            "delta.degrees": {
-              "type": "number",
-              "description": "Total rotation change in degrees",
-              "required": true
-            },
-            "final.angle": {
-              "type": "number",
-              "description": "Final rotation angle in degrees",
-              "required": true
-            },
-            "snapped.to.angle": {
-              "type": "boolean",
-              "description": "Whether rotation snapped to increment",
-              "required": true
-            },
-            "snap.interval": {
-              "type": "integer",
-              "description": "Snap interval used (15 or 1 degrees)",
-              "required": false
-            },
-            "duration.ms": {
-              "type": "integer",
-              "description": "Total duration of rotation",
-              "required": true
-            }
+      "label": "Rotate Done",
+      "event": {
+        "name": "rotate.completed",
+        "attributes": {
+          "delta.degrees": {
+            "type": "number",
+            "description": "Total rotation change in degrees",
+            "required": true
+          },
+          "final.angle": {
+            "type": "number",
+            "description": "Final rotation angle in degrees",
+            "required": true
+          },
+          "snapped.to.angle": {
+            "type": "boolean",
+            "description": "Whether rotation snapped to increment",
+            "required": true
+          },
+          "snap.interval": {
+            "type": "integer",
+            "description": "Snap interval used (15 or 1 degrees)",
+            "required": false
+          },
+          "duration.ms": {
+            "type": "integer",
+            "description": "Total duration of rotation",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "transform-cancelled",
-      "type": "text",
+      "type": "otel-event",
       "x": 600,
       "y": 200,
       "width": 200,
       "height": 100,
       "color": "#F44336",
-      "text": "# Transform Cancelled\n\nOperation aborted",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/tools/SelectTool/childStates/Translating.ts"],
-        "event": {
-          "name": "transform.cancelled",
-          "attributes": {
-            "transform.type": {
-              "type": "string",
-              "description": "Type of transform: 'translate', 'resize', 'rotate'",
-              "required": true
-            },
-            "reason": {
-              "type": "string",
-              "description": "Why cancelled: 'user_cancelled', 'interrupted'",
-              "required": true
-            },
-            "shapes.restored": {
-              "type": "boolean",
-              "description": "Whether shapes were restored to original state",
-              "required": true
-            }
+      "label": "Transform Cancelled",
+      "event": {
+        "name": "transform.cancelled",
+        "attributes": {
+          "transform.type": {
+            "type": "string",
+            "description": "Type of transform: 'translate', 'resize', 'rotate'",
+            "required": true
+          },
+          "reason": {
+            "type": "string",
+            "description": "Why cancelled: 'user_cancelled', 'interrupted'",
+            "required": true
+          },
+          "shapes.restored": {
+            "type": "boolean",
+            "description": "Whether shapes were restored to original state",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     }
   ],
@@ -326,7 +312,9 @@
       "fromSide": "bottom",
       "toNode": "translate-completed",
       "toSide": "top",
-      "pv": { "edgeType": "flow" }
+      "pv": {
+        "edgeType": "flow"
+      }
     },
     {
       "id": "e-resize-start-to-complete",
@@ -334,7 +322,9 @@
       "fromSide": "bottom",
       "toNode": "resize-completed",
       "toSide": "top",
-      "pv": { "edgeType": "flow" }
+      "pv": {
+        "edgeType": "flow"
+      }
     },
     {
       "id": "e-rotate-start-to-complete",
@@ -342,7 +332,9 @@
       "fromSide": "bottom",
       "toNode": "rotate-completed",
       "toSide": "top",
-      "pv": { "edgeType": "flow" }
+      "pv": {
+        "edgeType": "flow"
+      }
     },
     {
       "id": "e-translate-to-cancelled",
@@ -350,7 +342,9 @@
       "fromSide": "right",
       "toNode": "transform-cancelled",
       "toSide": "left",
-      "pv": { "edgeType": "branch" }
+      "pv": {
+        "edgeType": "branch"
+      }
     },
     {
       "id": "e-resize-to-cancelled",
@@ -358,7 +352,9 @@
       "fromSide": "right",
       "toNode": "transform-cancelled",
       "toSide": "left",
-      "pv": { "edgeType": "branch" }
+      "pv": {
+        "edgeType": "branch"
+      }
     },
     {
       "id": "e-rotate-to-cancelled",
@@ -366,7 +362,9 @@
       "fromSide": "right",
       "toNode": "transform-cancelled",
       "toSide": "left",
-      "pv": { "edgeType": "branch" }
+      "pv": {
+        "edgeType": "branch"
+      }
     }
   ]
 }

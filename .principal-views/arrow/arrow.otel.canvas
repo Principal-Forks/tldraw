@@ -15,247 +15,235 @@
   "nodes": [
     {
       "id": "arrow-pointing-started",
-      "type": "text",
+      "type": "otel-event",
       "x": 100,
       "y": 50,
       "width": 200,
       "height": 100,
       "color": "#4CAF50",
-      "text": "# Arrow Pointing\n\nPointer down with arrow tool",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/shapes/arrow/toolStates/Pointing.tsx"],
-        "event": {
-          "name": "arrow.pointing.started",
-          "attributes": {
-            "origin.x": {
-              "type": "number",
-              "description": "Starting X coordinate",
-              "required": true
-            },
-            "origin.y": {
-              "type": "number",
-              "description": "Starting Y coordinate",
-              "required": true
-            },
-            "is.precise": {
-              "type": "boolean",
-              "description": "Whether precision snapping is active",
-              "required": true
-            },
-            "target.shape.id": {
-              "type": "string",
-              "description": "ID of shape under pointer (if any)",
-              "required": false
-            },
-            "arrow.kind": {
-              "type": "string",
-              "description": "Arrow style: 'straight', 'curved', 'elbow'",
-              "required": true
-            }
+      "label": "Arrow Pointing",
+      "event": {
+        "name": "arrow.pointing.started",
+        "attributes": {
+          "origin.x": {
+            "type": "number",
+            "description": "Starting X coordinate",
+            "required": true
+          },
+          "origin.y": {
+            "type": "number",
+            "description": "Starting Y coordinate",
+            "required": true
+          },
+          "is.precise": {
+            "type": "boolean",
+            "description": "Whether precision snapping is active",
+            "required": true
+          },
+          "target.shape.id": {
+            "type": "string",
+            "description": "ID of shape under pointer (if any)",
+            "required": false
+          },
+          "arrow.kind": {
+            "type": "string",
+            "description": "Arrow style: 'straight', 'curved', 'elbow'",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "arrow-created",
-      "type": "text",
+      "type": "otel-event",
       "x": 100,
       "y": 200,
       "width": 200,
       "height": 100,
       "color": "#2196F3",
-      "text": "# Arrow Created\n\nArrow shape instantiated",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/shapes/arrow/toolStates/Pointing.tsx"],
-        "event": {
-          "name": "arrow.created",
-          "attributes": {
-            "shape.id": {
-              "type": "string",
-              "description": "ID of the new arrow shape",
-              "required": true
-            },
-            "arrow.kind": {
-              "type": "string",
-              "description": "Arrow style: 'straight', 'curved', 'elbow'",
-              "required": true
-            }
+      "label": "Arrow Created",
+      "event": {
+        "name": "arrow.created",
+        "attributes": {
+          "shape.id": {
+            "type": "string",
+            "description": "ID of the new arrow shape",
+            "required": true
+          },
+          "arrow.kind": {
+            "type": "string",
+            "description": "Arrow style: 'straight', 'curved', 'elbow'",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "arrow-freeform-placed",
-      "type": "text",
+      "type": "otel-event",
       "x": 100,
       "y": 275,
       "width": 200,
       "height": 80,
       "color": "#8BC34A",
-      "text": "# Freeform Placed\n\nArrow without bindings",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/shapes/arrow/toolStates/Pointing.tsx"],
-        "event": {
-          "name": "arrow.freeform.placed",
-          "attributes": {
-            "shape.id": {
-              "type": "string",
-              "description": "ID of the arrow shape",
-              "required": true
-            },
-            "start.x": {
-              "type": "number",
-              "description": "Start point X coordinate",
-              "required": true
-            },
-            "start.y": {
-              "type": "number",
-              "description": "Start point Y coordinate",
-              "required": true
-            },
-            "end.x": {
-              "type": "number",
-              "description": "End point X coordinate",
-              "required": true
-            },
-            "end.y": {
-              "type": "number",
-              "description": "End point Y coordinate",
-              "required": true
-            }
+      "label": "Freeform Placed",
+      "event": {
+        "name": "arrow.freeform.placed",
+        "attributes": {
+          "shape.id": {
+            "type": "string",
+            "description": "ID of the arrow shape",
+            "required": true
+          },
+          "start.x": {
+            "type": "number",
+            "description": "Start point X coordinate",
+            "required": true
+          },
+          "start.y": {
+            "type": "number",
+            "description": "Start point Y coordinate",
+            "required": true
+          },
+          "end.x": {
+            "type": "number",
+            "description": "End point X coordinate",
+            "required": true
+          },
+          "end.y": {
+            "type": "number",
+            "description": "End point Y coordinate",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "arrow-binding-created",
-      "type": "text",
+      "type": "otel-event",
       "x": 350,
       "y": 200,
       "width": 200,
       "height": 100,
       "color": "#9C27B0",
-      "text": "# Binding Created\n\nArrow bound to target shape",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/shapes/arrow/ArrowBindingUtil.ts"],
-        "event": {
-          "name": "arrow.binding.created",
-          "attributes": {
-            "binding.id": {
-              "type": "string",
-              "description": "ID of the binding record",
-              "required": true
-            },
-            "arrow.id": {
-              "type": "string",
-              "description": "ID of the arrow shape",
-              "required": true
-            },
-            "target.id": {
-              "type": "string",
-              "description": "ID of the target shape being bound to",
-              "required": true
-            },
-            "target.type": {
-              "type": "string",
-              "description": "Type of target shape (geo, note, frame, etc.)",
-              "required": true
-            },
-            "terminal": {
-              "type": "string",
-              "description": "Which arrow end: 'start' or 'end'",
-              "required": true
-            },
-            "snap.type": {
-              "type": "string",
-              "description": "How it snapped: 'center', 'edge', 'edge-point', 'center-axis'",
-              "required": true
-            },
-            "is.precise": {
-              "type": "boolean",
-              "description": "Whether precise snapping was used",
-              "required": true
-            }
+      "label": "Binding Created",
+      "event": {
+        "name": "arrow.binding.created",
+        "attributes": {
+          "binding.id": {
+            "type": "string",
+            "description": "ID of the binding record",
+            "required": true
+          },
+          "arrow.id": {
+            "type": "string",
+            "description": "ID of the arrow shape",
+            "required": true
+          },
+          "target.id": {
+            "type": "string",
+            "description": "ID of the target shape being bound to",
+            "required": true
+          },
+          "target.type": {
+            "type": "string",
+            "description": "Type of target shape (geo, note, frame, etc.)",
+            "required": true
+          },
+          "terminal": {
+            "type": "string",
+            "description": "Which arrow end: 'start' or 'end'",
+            "required": true
+          },
+          "snap.type": {
+            "type": "string",
+            "description": "How it snapped: 'center', 'edge', 'edge-point', 'center-axis'",
+            "required": true
+          },
+          "is.precise": {
+            "type": "boolean",
+            "description": "Whether precise snapping was used",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "arrow-completed",
-      "type": "text",
+      "type": "otel-event",
       "x": 100,
       "y": 350,
       "width": 200,
       "height": 100,
       "color": "#4CAF50",
-      "text": "# Arrow Completed\n\nArrow creation finished",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/shapes/arrow/toolStates/Pointing.tsx"],
-        "event": {
-          "name": "arrow.completed",
-          "attributes": {
-            "shape.id": {
-              "type": "string",
-              "description": "ID of the completed arrow",
-              "required": true
-            },
-            "bindings.count": {
-              "type": "integer",
-              "description": "Number of bindings (0, 1, or 2)",
-              "required": true
-            },
-            "length.px": {
-              "type": "number",
-              "description": "Arrow length in pixels",
-              "required": true
-            },
-            "duration.ms": {
-              "type": "integer",
-              "description": "Total creation time in milliseconds",
-              "required": true
-            }
+      "label": "Arrow Completed",
+      "event": {
+        "name": "arrow.completed",
+        "attributes": {
+          "shape.id": {
+            "type": "string",
+            "description": "ID of the completed arrow",
+            "required": true
+          },
+          "bindings.count": {
+            "type": "integer",
+            "description": "Number of bindings (0, 1, or 2)",
+            "required": true
+          },
+          "length.px": {
+            "type": "number",
+            "description": "Arrow length in pixels",
+            "required": true
+          },
+          "duration.ms": {
+            "type": "integer",
+            "description": "Total creation time in milliseconds",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     },
     {
       "id": "arrow-cancelled",
-      "type": "text",
+      "type": "otel-event",
       "x": 350,
       "y": 50,
       "width": 200,
       "height": 100,
       "color": "#F44336",
-      "text": "# Arrow Cancelled\n\nCreation aborted",
-      "pv": {
-        "nodeType": "event",
-        "status": "draft",
-        "references": ["packages/tldraw/src/lib/shapes/arrow/toolStates/Pointing.tsx"],
-        "event": {
-          "name": "arrow.cancelled",
-          "attributes": {
-            "reason": {
-              "type": "string",
-              "description": "Why cancelled: 'released_before_drag', 'user_cancelled', 'interrupted'",
-              "required": true
-            },
-            "shape.rolled.back": {
-              "type": "boolean",
-              "description": "Whether arrow shape was deleted",
-              "required": true
-            }
+      "label": "Arrow Cancelled",
+      "event": {
+        "name": "arrow.cancelled",
+        "attributes": {
+          "reason": {
+            "type": "string",
+            "description": "Why cancelled: 'released_before_drag', 'user_cancelled', 'interrupted'",
+            "required": true
+          },
+          "shape.rolled.back": {
+            "type": "boolean",
+            "description": "Whether arrow shape was deleted",
+            "required": true
           }
         }
+      },
+      "otel": {
+        "status": "draft"
       }
     }
   ],
@@ -266,7 +254,9 @@
       "fromSide": "bottom",
       "toNode": "arrow-created",
       "toSide": "top",
-      "pv": { "edgeType": "flow" }
+      "pv": {
+        "edgeType": "flow"
+      }
     },
     {
       "id": "e-created-to-binding",
@@ -274,7 +264,9 @@
       "fromSide": "right",
       "toNode": "arrow-binding-created",
       "toSide": "left",
-      "pv": { "edgeType": "branch" }
+      "pv": {
+        "edgeType": "branch"
+      }
     },
     {
       "id": "e-created-to-freeform",
@@ -282,7 +274,9 @@
       "fromSide": "bottom",
       "toNode": "arrow-freeform-placed",
       "toSide": "top",
-      "pv": { "edgeType": "branch" }
+      "pv": {
+        "edgeType": "branch"
+      }
     },
     {
       "id": "e-freeform-to-completed",
@@ -290,7 +284,9 @@
       "fromSide": "bottom",
       "toNode": "arrow-completed",
       "toSide": "top",
-      "pv": { "edgeType": "flow" }
+      "pv": {
+        "edgeType": "flow"
+      }
     },
     {
       "id": "e-binding-to-completed",
@@ -298,7 +294,9 @@
       "fromSide": "bottom",
       "toNode": "arrow-completed",
       "toSide": "right",
-      "pv": { "edgeType": "flow" }
+      "pv": {
+        "edgeType": "flow"
+      }
     },
     {
       "id": "e-pointing-to-cancelled",
@@ -306,7 +304,9 @@
       "fromSide": "right",
       "toNode": "arrow-cancelled",
       "toSide": "left",
-      "pv": { "edgeType": "branch" }
+      "pv": {
+        "edgeType": "branch"
+      }
     }
   ]
 }

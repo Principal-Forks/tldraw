@@ -1,7 +1,8 @@
 {
   "pv": {
-    "name": "tldraw Architecture",
+    "name": "tldraw Package Architecture",
     "version": "1.0.0",
+    "markdown": ".principal-views/package-architecture.md",
     "nodeTypes": {
       "CorePackage": {
         "description": "Core SDK package",
@@ -33,12 +34,13 @@
   "nodes": [
     {
       "id": "state",
-      "type": "geo",
+      "type": "text",
       "x": 236,
       "y": 795,
       "width": 200,
       "height": 100,
-      "color": 5,
+      "color": "#64748B",
+      "text": "**@tldraw/state**\n\nReactive signals library for state management",
       "pv": {
         "nodeType": "SupportPackage",
         "shape": "rectangle",
@@ -48,12 +50,13 @@
     },
     {
       "id": "utils",
-      "type": "geo",
+      "type": "text",
       "x": -6,
       "y": 795,
       "width": 200,
       "height": 100,
-      "color": 5,
+      "color": "#64748B",
+      "text": "**@tldraw/utils**\n\nShared utility functions",
       "pv": {
         "nodeType": "SupportPackage",
         "shape": "rectangle",
@@ -63,12 +66,13 @@
     },
     {
       "id": "validate",
-      "type": "geo",
+      "type": "text",
       "x": 207,
       "y": 237,
       "width": 200,
       "height": 100,
-      "color": 5,
+      "color": "#64748B",
+      "text": "**@tldraw/validate**\n\nLightweight validation library",
       "pv": {
         "nodeType": "SupportPackage",
         "shape": "rectangle",
@@ -78,12 +82,13 @@
     },
     {
       "id": "store",
-      "type": "geo",
+      "type": "text",
       "x": -202,
       "y": 516,
       "width": 200,
       "height": 100,
-      "color": 4,
+      "color": "#4A90E2",
+      "text": "**@tldraw/store**\n\nReactive client-side database",
       "pv": {
         "nodeType": "CorePackage",
         "shape": "rectangle",
@@ -93,12 +98,13 @@
     },
     {
       "id": "tlschema",
-      "type": "geo",
+      "type": "text",
       "x": -209,
       "y": 241,
       "width": 200,
       "height": 100,
-      "color": 4,
+      "color": "#4A90E2",
+      "text": "**@tldraw/tlschema**\n\nType definitions and validators",
       "pv": {
         "nodeType": "CorePackage",
         "shape": "rectangle",
@@ -108,12 +114,13 @@
     },
     {
       "id": "assets",
-      "type": "geo",
+      "type": "text",
       "x": 377,
       "y": -20,
       "width": 200,
       "height": 100,
-      "color": 5,
+      "color": "#64748B",
+      "text": "**@tldraw/assets**\n\nIcons, fonts, and translations",
       "pv": {
         "nodeType": "SupportPackage",
         "shape": "rectangle",
@@ -123,12 +130,13 @@
     },
     {
       "id": "editor",
-      "type": "geo",
+      "type": "text",
       "x": -12,
       "y": 73,
       "width": 200,
       "height": 100,
-      "color": 4,
+      "color": "#4A90E2",
+      "text": "**@tldraw/editor**\n\nFoundational infinite canvas editor",
       "pv": {
         "nodeType": "CorePackage",
         "shape": "rectangle",
@@ -138,12 +146,13 @@
     },
     {
       "id": "sync",
-      "type": "geo",
+      "type": "text",
       "x": -417,
       "y": 74,
       "width": 200,
       "height": 100,
-      "color": 4,
+      "color": "#4A90E2",
+      "text": "**@tldraw/sync**\n\nMultiplayer synchronization SDK",
       "pv": {
         "nodeType": "CorePackage",
         "shape": "rectangle",
@@ -153,12 +162,13 @@
     },
     {
       "id": "tldraw",
-      "type": "geo",
+      "type": "text",
       "x": -12,
       "y": -120,
       "width": 200,
       "height": 100,
-      "color": 4,
+      "color": "#4A90E2",
+      "text": "**@tldraw/tldraw**\n\nComplete batteries-included SDK",
       "pv": {
         "nodeType": "CorePackage",
         "shape": "rectangle",
@@ -168,12 +178,13 @@
     },
     {
       "id": "examples",
-      "type": "geo",
+      "type": "text",
       "x": -216,
       "y": -336,
       "width": 150,
       "height": 80,
-      "color": 2,
+      "color": "#F5A623",
+      "text": "**examples**\n\nSDK examples and demos",
       "pv": {
         "nodeType": "Application",
         "shape": "circle",
@@ -183,12 +194,13 @@
     },
     {
       "id": "docs",
-      "type": "geo",
+      "type": "text",
       "x": 12,
       "y": -340,
       "width": 150,
       "height": 80,
-      "color": 2,
+      "color": "#F5A623",
+      "text": "**docs**\n\nDocumentation site (tldraw.dev)",
       "pv": {
         "nodeType": "Application",
         "shape": "circle",
@@ -198,12 +210,13 @@
     },
     {
       "id": "dotcom-client",
-      "type": "geo",
+      "type": "text",
       "x": 458,
       "y": -345,
       "width": 150,
       "height": 80,
-      "color": 2,
+      "color": "#F5A623",
+      "text": "**dotcom**\n\ntldraw.com application",
       "pv": {
         "nodeType": "Application",
         "shape": "circle",
@@ -213,12 +226,13 @@
     },
     {
       "id": "dotcom-sync",
-      "type": "geo",
+      "type": "text",
       "x": -397,
       "y": -98,
       "width": 160,
       "height": 80,
-      "color": 2,
+      "color": "#F5A623",
+      "text": "**sync-worker**\n\nMultiplayer backend worker",
       "pv": {
         "nodeType": "Application",
         "shape": "circle",
@@ -228,12 +242,13 @@
     },
     {
       "id": "vscode",
-      "type": "geo",
+      "type": "text",
       "x": 230,
       "y": -342,
       "width": 150,
       "height": 80,
-      "color": 2,
+      "color": "#F5A623",
+      "text": "**vscode**\n\nVSCode extension",
       "pv": {
         "nodeType": "Application",
         "shape": "circle",
